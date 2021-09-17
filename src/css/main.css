@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body {
     padding: 0%;
     margin: 0%;
@@ -8,8 +9,14 @@ body {
 
 .custom-btn {
     color: white;
-    border: 1px solid white;
+    border: 1px solid rgb(161, 136, 111);
     padding: 5px 20px 5px 20px;
+    transition: 0.4s;
+}
+
+.custom-btn:hover {
+    transition: 0.4s;
+    background-color: rgb(161, 136, 111);
 }
 
 .btn-background {
@@ -23,4 +30,44 @@ body {
 
 .darken-background {
     background-color: rgba(40, 40, 40, 0.5)
+}
+
+.nav-text {
+    font-size: calc(0.6vw + 0.6em);
+}
+
+.custom-beige-font {
+    color: rgb(161, 136, 111);
+}
+
+.white-bordered {
+    border: 1px solid white;
+}
+
+.thin-writing {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-btns {
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+    color: white;
+}
+
+.carousel-btns:hover {
+    color: rgb(161, 136, 111);
+    transition: 0.4s;
+}
+
+.carousel-btn-left {
+    top: 45%;
+}
+
+.carousel-btn-right {
+    top: 45%;
+    left: 96%;
 }
