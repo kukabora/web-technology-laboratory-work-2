@@ -29,10 +29,39 @@
     transition: 0.4s;
 }
 
-.inner-canvas {
-    padding: 15%;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(40, 40, 40, 0.5);
+.circle-card {
+    padding: 15px !important;
+    background-color: rgba(40, 40, 40, 1);
+    border-radius: 50%;
+    min-height: 300px;
+    max-height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    margin-bottom: 10%;
+}
+
+.circle-card-header {
+    margin: 40px !important;
+}
+
+.divided-info {
+    padding: 0%;
+    margin: 0%;
+}
+
+.left-divided-section {
+    background-image: url("/src/img/divided-section-1.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 0% !important;
+    margin: 0%;
+    background-size: cover;
+}
+
+.right-divided-section {
+    padding: 0% !important;
+    margin: 0%;
+    background-image: url("/src/img/divided-section-2.jpg");
+    background-position: center;
+    background-size: cover;
 }
