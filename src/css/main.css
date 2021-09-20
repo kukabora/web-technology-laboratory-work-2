@@ -31,11 +31,29 @@ body {
     margin-left: 25%;
 }
 
+.additional-navbar-functionality {
+    position: relative;
+}
+
 .user-avatar {
     width: 100%;
     background-image: url("/src/img/guest-user.jpg");
     background-position: center;
     background-size: cover;
+}
+
+.sidenav-account-btn {
+    position: absolute;
+}
+
+.sidenav-account-btn-left {
+    left: 10%;
+    top: 85%;
+}
+
+.sidenav-account-btn-right {
+    left: 60%;
+    top: 85%;
 }
 
 .sidenav-bckgd {
