@@ -31,8 +31,15 @@ body {
     margin-left: 25%;
 }
 
-.additional-navbar-functionality {
-    position: relative;
+.navbar-buttons {
+    margin-top: 4%;
+    transition: 0.4s;
+    display: block;
+}
+
+.navbar-buttons:hover {
+    border-bottom: 1px solid white;
+    transition: 0.4s;
 }
 
 .user-avatar {
