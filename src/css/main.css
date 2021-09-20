@@ -5,6 +5,42 @@ body {
     padding: 0%;
     margin: 0%;
     font-family: 'Fjalla One', sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: rgb(27, 27, 27);
+    width: 100%;
+    border: 0px transparent black;
+    border-bottom: 8px solid rgb(20, 20, 20);
+    padding: 15px 30px 0px 30px;
+}
+
+.inline-icon {
+    vertical-align: bottom;
+    font-size: calc(1.5vw + 1.5em);
+}
+
+.logo {
+    color: rgb(183, 0, 0);
+    font-family: 'Great Vibes', cursive;
+    font-weight: 600;
+    font-size: calc(1vw + 1em);
+    padding: 0%;
+    margin: 0%;
+    margin-left: 25%;
+}
+
+.user-avatar {
+    width: 100%;
+    background-image: url("/src/img/guest-user.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.sidenav-bckgd {
+    background-color: rgb(27, 27, 27);
+    border-bottom: 8px solid rgb(20, 20, 20);
 }
 
 .inner-canvas {

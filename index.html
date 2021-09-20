@@ -12,11 +12,11 @@
 </head>
 
 <body>
+
     <div class="header">
         <div class="row" style="margin: 0%;">
-
             <div class="col s1">
-                <i class="material-icons inline-icon custom-beige-font">menu</i><a href="#" class="white-text hide-on-med-and-down nav-text thin-writing" style="font-size: calc(0.4vw + 0.4em);">MENU</a>
+                <i class="material-icons inline-icon custom-beige-font">menu</i><a href="#" data-target="slide-out" class="sidenav-trigger white-text hide-on-med-and-down nav-text thin-writing" style="font-size: calc(0.4vw + 0.4em);">MENU</a>
             </div>
             <div class="col m2 hide-on-med-and-down">
                 <a href="#" class="white-text custom-btn hide-on-med-and-down thin-writing" style="font-size: calc(0.4vw + 0.4em);">BECOME A MEMBER</a>
@@ -33,6 +33,27 @@
         </div>
     </div>
 
+    <div id="slide-out" class="sidenav sidenav-bckgd">
+        <div class="user-info white-text">
+            <div class="user-avatar">
+                <div class="inner-canvas">
+                    <h4 class="user-name">Guest</h4>
+                    <span class="white-text">Country: Unknown</span> <br>
+                    <span class="white-text">Age: Unknown</span>
+                </div>
+            </div>
+            <div class="additional-navbar-functionality container">
+                <h5 class="white-text">Balance: 0$</h5>
+                <a href="#" class="white-text">
+                    <h6 class="cursive-text"><u>Withdraw</u></h6>
+                </a>
+                <hr>
+                <a href="#" class="white-text navbar-buttons"><i class="material-icons inline-icon">games</i>Games</a><br>
+                <a href="#" class="white-text navbar-buttons"><i class="material-icons inline-icon">account_circle</i>Personal cabinet</a><br>
+                <a href="#" class="white-text navbar-buttons"><i class="material-icons inline-icon">settings</i>Settings</a><br>
+            </div>
+        </div>
+    </div>
     <div class="main-bckgd">
         <div class="inner-canvas darken-background center-align">
             <h1 class="white-text" style="margin: 0px;">WHERE A GREAT NIGHT</h1>
@@ -88,6 +109,20 @@
             </div>
         </div>
     </div>
+    <div class="white-text footer center-align">
+        <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
+        <a href="#" class="white-text">Instagram</a><br>
+        <a href="#" class="white-text">Facebook</a><br>
+        <a href="#" class="white-text">LinkedIN</a><br>
+        <p class="signature cursive-text">Made specially for web-technologies course by Lee Alexander.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var options = {};
+            var instances = M.Sidenav.init(elems, options);
+        });
+    </script>
     <script src="src/js/materialize.js"></script>
     <script src="src/js/carousel.js"></script>
 </body>
