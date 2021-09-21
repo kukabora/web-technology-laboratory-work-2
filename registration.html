@@ -68,12 +68,30 @@
     <div class="background">
         <div class="inner-canvas">
             <div class="form-wrapper container white-text">
-                <form action="#" method="POST" class="container" style="padding: 1%;">
+                <form action="" method="POST" class="container center-align" style="padding: 1%;">
                     <h2 class="cursive-text center-align" style="font-size: calc(1vw + 1em + 15px);">Fill the form below</h2>
-                    <input type="text" placeholder="First Name" class="thin-writing white-text custom-input">
-                    <input type="text" placeholder="Second Name" class="thin-writing white-text custom-input">
-                    <input placeholder="Birth Date" class="textbox-n thin-writing white-text custom-input" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
-                    <input type="text" placeholder="Country" class="thin-writing white-text custom-input">
+                    <div class="input-field">
+                        <input type="text" placeholder="Login" class="thin-writing white-text custom-input">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Email" class="thin-writing white-text custom-input">
+                    </div>
+                    <div class="input-field">
+                        <input type="password" placeholder="Password" class="thin-writing white-text custom-input">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="First Name" class="thin-writing white-text custom-input">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Second Name" class="thin-writing white-text custom-input">
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="Birth Date" class="textbox-n thin-writing white-text custom-input" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="autocomplete-input" placeholder="Country" class="autocomplete thin-writing white-text custom-input">
+                    </div>
+                    <button type="submit" class="custom-btn submitting-button">Submit form</button>
                 </form>
             </div>
         </div>
@@ -86,6 +104,18 @@
         <a href="#" class="white-text">LinkedIN</a><br>
         <p class="signature cursive-text">Made specially for web-technologies course by Lee Alexander.</p>
     </div>
+    <script src="src/js/materialize.js"></script>
+    <script src="src/js/getAllCountryInfo.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.autocomplete');
+            var options = {
+                data: countryData,
+                limit: 3
+            };
+            var instances = M.Autocomplete.init(elems, options);
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
@@ -93,8 +123,6 @@
             var instances = M.Sidenav.init(elems, options);
         });
     </script>
-    <script src="src/js/materialize.js"></script>
-    <script src="src/js/carousel.js"></script>
 </body>
 
 </html>

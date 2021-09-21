@@ -161,3 +161,16 @@ body {
     top: 70%;
     position: absolute;
 }
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(135, 135, 135)!important;
+    font-weight: 700;
+}
+
+.autocomplete-content li .highlight {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(20, 20, 20) !important;
+    font-weight: 700;
+}
