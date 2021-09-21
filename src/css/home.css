@@ -36,20 +36,3 @@
     background-position: center;
     background-size: cover;
 }
-
-.footer {
-    position: relative;
-    margin: 0% !important;
-    padding: 1%;
-    background-color: rgb(27, 27, 27);
-}
-
-.footer-header {
-    margin: 0%;
-}
-
-.signature {
-    left: 73%;
-    top: 70%;
-    position: absolute;
-}

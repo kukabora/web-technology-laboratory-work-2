@@ -144,3 +144,20 @@ body {
     top: 45%;
     left: 96%;
 }
+
+.footer {
+    position: relative;
+    margin: 0% !important;
+    padding: 1%;
+    background-color: rgb(27, 27, 27);
+}
+
+.footer-header {
+    margin: 0%;
+}
+
+.signature {
+    left: 73%;
+    top: 70%;
+    position: absolute;
+}
