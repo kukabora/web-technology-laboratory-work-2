@@ -1,0 +1,13 @@
+.background {
+    background-image: url("/src/img/feedback_background.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.feedback-wrapper {
+    padding: 15px;
+}
+
+.feedback-card {
+    background-color: red;
+}
