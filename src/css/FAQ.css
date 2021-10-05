@@ -1,0 +1,28 @@
+.background {
+    background-image: url(/src/img/FAQ_background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.main-faq-info {
+    background-color: rgba(27, 27, 27, 0.9);
+    border: none !important;
+}
+
+.element-header {
+    color: rgb(183, 0, 0);
+    font-weight: 700;
+    font-size: calc(0.8vw + 0.8em);
+}
+
+.collapsible-header {
+    background-color: rgba(27, 27, 27, 0.9);
+    border: 1px solid rgba(27, 27, 27, 0.9) !important;
+    outline: none !important;
+}
+
+.collapsible-body {
+    border: none;
+    outline: none !important;
+    background-color: white !important;
+}
