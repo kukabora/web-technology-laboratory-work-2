@@ -21,6 +21,10 @@ body {
     font-size: calc(1.5vw + 1.5em);
 }
 
+.red-dark-text {
+    color: rgb(183, 0, 0);
+}
+
 .logo {
     color: rgb(183, 0, 0);
     font-family: 'Great Vibes', cursive;

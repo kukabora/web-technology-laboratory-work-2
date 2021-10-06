@@ -7,10 +7,10 @@
 .main-faq-info {
     background-color: rgba(27, 27, 27, 0.9);
     border: none !important;
+    padding-top: 0.5%;
 }
 
 .element-header {
-    color: rgb(183, 0, 0);
     font-weight: 700;
     font-size: calc(0.8vw + 0.8em);
     transition: 0.4s;
