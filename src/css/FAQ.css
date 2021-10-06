@@ -13,11 +13,17 @@
     color: rgb(183, 0, 0);
     font-weight: 700;
     font-size: calc(0.8vw + 0.8em);
+    transition: 0.4s;
+}
+
+.element-header:hover {
+    background-color: white;
+    transition: 0.4s;
 }
 
 .collapsible-header {
     background-color: rgba(27, 27, 27, 0.9);
-    border: 1px solid rgba(27, 27, 27, 0.9) !important;
+    border: 0px transparent rgba(27, 27, 27, 0.9) !important;
     outline: none !important;
 }
 
