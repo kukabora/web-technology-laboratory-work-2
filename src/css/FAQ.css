@@ -11,12 +11,14 @@
 }
 
 .element-header {
+    color: white;
     font-weight: 700;
     font-size: calc(0.8vw + 0.8em);
     transition: 0.4s;
 }
 
 .element-header:hover {
+    color: black;
     background-color: white;
     transition: 0.4s;
 }
