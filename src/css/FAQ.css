@@ -30,6 +30,8 @@
 }
 
 .collapsible-body {
+    font-weight: 700;
+    font-size: calc(0.8vw + 0.8em);
     border: none;
     outline: none !important;
     background-color: white !important;
