@@ -178,3 +178,45 @@ body {
     color: rgb(20, 20, 20) !important;
     font-weight: 700;
 }
+
+.custom-btn-red {
+    background-color: white;
+    border: 1px solid rgb(206, 53, 53);
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
+
+.custom-btn-red:hover {
+    background-color: rgb(206, 53, 53);
+    color: black !important;
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
+
+.custom-btn-blue {
+    background-color: white;
+    border: 1px solid rgb(83, 137, 253);
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
+
+.custom-btn-blue:hover {
+    background-color: rgb(83, 137, 253);
+    color: black !important;
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
+
+.custom-btn-green {
+    background-color: white;
+    border: 1px solid rgb(44, 153, 75);
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
+
+.custom-btn-green:hover {
+    background-color: rgb(44, 153, 75);
+    color: black !important;
+    transition: 0.4s;
+    margin: 0% 1% 0% 1%;
+}
