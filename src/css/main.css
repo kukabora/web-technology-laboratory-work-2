@@ -24,6 +24,9 @@ body {
 .red-dark-text {
     color: rgb(183, 0, 0);
 }
+.green-dark-text {
+    color: rgb(42, 160, 18);
+}
 
 .logo {
     color: rgb(183, 0, 0);
