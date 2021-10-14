@@ -180,6 +180,7 @@ body {
 }
 
 .custom-btn-red {
+    font-size: calc(0.6vw + 0.6em);
     background-color: white;
     border: 1px solid rgb(206, 53, 53);
     transition: 0.4s;
@@ -194,6 +195,7 @@ body {
 }
 
 .custom-btn-blue {
+    font-size: calc(0.6vw + 0.6em);
     background-color: white;
     border: 1px solid rgb(83, 137, 253);
     transition: 0.4s;
@@ -208,6 +210,7 @@ body {
 }
 
 .custom-btn-green {
+    font-size: calc(0.6vw + 0.6em);
     background-color: white;
     border: 1px solid rgb(44, 153, 75);
     transition: 0.4s;
