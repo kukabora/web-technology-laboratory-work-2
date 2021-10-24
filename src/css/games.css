@@ -1,0 +1,28 @@
+.background {
+  background-image: url("/src/img/games_list_background.jpg");
+}
+
+.game-card {
+  background-color: rgba(27, 27, 27, 0.9);
+}
+
+.card-background {
+  background-image: url("/src/img/games_list_background-2.jpg");
+}
+
+.card-info-container {
+  background-color: rgba(27, 27, 27, 0.7);
+}
+
+.card-header {
+  padding: 1%;
+}
+
+.play-btn {
+  font-weight: 600;
+  font-size: calc(0.7vw + 0.7em);
+}
+
+.game-logo {
+  width: 50%;
+}
