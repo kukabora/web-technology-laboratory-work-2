@@ -177,13 +177,19 @@
                             Excellent game for beginner players that just want to relax and <s>lose</s> win some good amount of money. Ladies and gentleman, let me introduce you the most old and famous game around all the casinos in the world: <u>Bandit Slot Machine!</u>
                                 <img class="game-logo" src="/src/img/one-armed-bandit-logo.png" alt="">
                                 <br>
-                                <button class="custom-btn-green btn-background-dark thin-writing play-btn">Play Now!</button>
+                                <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#slot">Play Now!</a>
                             </div>
                             <div class="center-align">
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>Lorem</p>
+              </div>
             </div>
         </div>
       </div>
@@ -200,6 +206,13 @@
       </p>
     </div>
     <script src="src/js/materialize.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var options = {};
+        var instances = M.Modal.init(elems, options);
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var elems = document.querySelectorAll(".sidenav");
