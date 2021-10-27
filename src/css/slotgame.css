@@ -1,0 +1,36 @@
+#slot {
+  border: solid;
+}
+
+.blink {
+  animation: blink 0.4s infinite alternate;
+  -webkit-animation: blink 0.4s infinite alternate;
+}
+@keyframes blink {
+  to {
+    background: #c3ad00;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    background: #c3ad00;
+  }
+}
+
+body {
+  background: black !important;
+}
+
+.gold {
+  color: gold !important;
+}
+.green {
+  color: green;
+}
+
+div.modal-footer,
+div.modal-body,
+div.modal-header {
+  background-color: #000000de;
+  color: white;
+}
