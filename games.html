@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/games.css" />
     <link rel="stylesheet" href="src/css/slotgame.css" />
+    <link rel="stylesheet" href="src/css/wheelgame.css" />
     <link rel="stylesheet" href="src/css/registration-form.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -168,10 +169,10 @@
 <div class="col l4 m6 s12 white-text">
     <div class="game-card">
         <div class="card-header">
-            <h2 style="font-size: calc(1.5vw + 1.5em);">Classic roulette</h2>
+            <h2 style="font-size: calc(1.5vw + 1.5em);">Classic wheel of fortune</h2>
             <div class="card-background">
                 <div class="card-info-container white-text center-align">
-                    <p>You are a boomer who recognizes only an Old School games? Awesome! Only at our casino you can spin the wheel of fortune and try your luck to win some good cash! Ladies and gentleman, let me introduce you to <u>Online Roulette!</u>
+                    <p>You are a boomer who recognizes only an Old School games? Awesome! Only at our casino you can spin the wheel of fortune and try your luck to win some good cash! Ladies and gentleman, let me introduce you to <u>Wheel of Fortune!</u>
                     </p>
                     <img class="game-logo" src="/src/img/roulette-logo.png" alt="">
                     <br>
@@ -213,30 +214,36 @@
         </div>
     </div>
 </div>
-<div id="roulettegame" class="modal grey darken-4 white-text">
+<div id="roulettegame" class="modal grey darken-4 white-text" style="max-height: 100% !important;">
     <div class="modal-content">
 
 
         <div class="row">
             <div class="col s12 m8">
-                <div class="monitor">
-                    <div class="slot-photo-wrapper">
-                        <img src="/src/img/seven-section.png" alt="" srcset="" class="slot-photo slot1 ">
-                    </div>
-                    <div class="slot-photo-wrapper">
-                        <img src="/src/img/coin-section.png" alt="" srcset="" class="slot-photo slot2">
-                    </div>
-                    <div class="slot-photo-wrapper">
-                        <img src="/src/img/cherry-section.png" alt="" srcset="" class="slot-photo slot3">
+                <div id="mainbox" class="mainbox animate">
+                    <div id="box" class="box" style="transform: rotate(4709deg);">
+                        <div class="box1">
+                            <span class="span1"><b>Iron Man</b></span>
+                            <span class="span2"><b>7500</b></span>
+                            <!-- <span class="span3"><b>Bat Man</b></span>
+                            <span class="span4"><b>Joker</b></span> -->
+                        </div>
+                        <div class="box2">
+                            <span class="span1"><b>Shoplifters</b></span>
+                            <span class="span2"><b>Inception</b></span>
+                            <!-- <span class="span3"><b>Deadpool</b></span>
+                            <span class="span4"><b>Terminator</b></span> -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4">
+            <div class="col s12 m4 valign-wrapper">
                 <div class="controls">
                     <h4 style="margin: 5%;">Total win: <span class="green-text">0$</span></h4>
                     <h5>Current amount of money: <span class="green-text">0$</span></h5>
-                    <input type="number" placeholder="Your bet" class="white-text">
+                    <input type="number" placeholder="Your bet" class="white-text bet-field">
                     <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
+
                 </div>
             </div>
 
@@ -257,6 +264,7 @@
     </p>
 </div>
 <script src="/src/js/materialize.js"></script>
+<script src="/src/js/wheelgame.js"></script>
 <script src="/src/js/slotgame.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
