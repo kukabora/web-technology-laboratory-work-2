@@ -17,7 +17,7 @@ function unBlurMonitor() {
 async function rotateSlot(images) {
     blurMonitor()
 
-    setTimeout(unBlurMonitor(), 1000)
+    await setTimeout(unBlurMonitor, 5000)
 
     // var slotsWrappers = document.querySelectorAll(".slot-photo-wrapper")
     // var slots = []
