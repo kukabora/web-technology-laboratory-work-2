@@ -135,8 +135,9 @@
                         <h2 style="font-size: calc(1.5vw + 1.5em);">One-Armed-Bandit</h2>
                         <div class="card-background">
                             <div class="card-info-container white-text center-align">
-                            Excellent game for beginner players that just want to relax and <s>lose</s> win some good amount of money. Ladies and gentleman, let me introduce you the most old and famous game around all the casinos in the world: <u>Bandit Slot Machine!</u>
-                                <img class="game-logo" src="/src/img/one-armed-bandit-logo.png" alt="">
+                            <p>Excellent game for beginner players that just want to relax and <s class="red-text ">lose</s> win some good amount of money. Ladies and gentleman, let me introduce you the most old and famous game around all the casinos in the world: <u>Bandit Slot Machine!</u>
+                            </p>
+                              <img class="game-logo" src="/src/img/one-armed-bandit-logo.png" alt="">
                                 <br>
                                 <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#slotgame">Play Now!</a>
         </div>
@@ -150,13 +151,13 @@
 <div class="col l4 m6 s12 white-text">
     <div class="game-card">
         <div class="card-header">
-            <h2 style="font-size: calc(1.5vw + 1.5em);">One-Armed-Bandit</h2>
+            <h2 style="font-size: calc(1.5vw + 1.5em);">Pirate's hat</h2>
             <div class="card-background">
                 <div class="card-info-container white-text center-align">
-                    Excellent game for beginner players that just want to relax and <s>lose</s> win some good amount of money. Ladies and gentleman, let me introduce you the most old and famous game around all the casinos in the world: <u>Bandit Slot Machine!</u>
-                    <img class="game-logo" src="/src/img/roulette-logo.png" alt="">
+                    <p>"ARRGGHH!!! Give me that bottle of nice-brewed rome! I am going to make some serious money in here!" - That's what real pirate would say! Test your luck in this beautiful designed game: <u>Pirate's hat!</u></p>
+                    <img class="game-logo" src="/src/img/pirates-hat-logo.png" alt="">
                     <br>
-                    <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#">Play Now!</a>
+                    <a class="custom-btn-red btn-background-dark thin-writing red-text modal-trigger">Coming soon!</a>
                 </div>
                 <div class="center-align">
                 </div>
@@ -167,13 +168,14 @@
 <div class="col l4 m6 s12 white-text">
     <div class="game-card">
         <div class="card-header">
-            <h2 style="font-size: calc(1.5vw + 1.5em);">One-Armed-Bandit</h2>
+            <h2 style="font-size: calc(1.5vw + 1.5em);">Classic roulette</h2>
             <div class="card-background">
                 <div class="card-info-container white-text center-align">
-                    Excellent game for beginner players that just want to relax and <s>lose</s> win some good amount of money. Ladies and gentleman, let me introduce you the most old and famous game around all the casinos in the world: <u>Bandit Slot Machine!</u>
-                    <img class="game-logo" src="/src/img/one-armed-bandit-logo.png" alt="">
+                    <p>You are a boomer who recognizes only an Old School games? Awesome! Only at our casino you can spin the wheel of fortune and try your luck to win some good cash! Ladies and gentleman, let me introduce you to <u>Online Roulette!</u>
+                    </p>
+                    <img class="game-logo" src="/src/img/roulette-logo.png" alt="">
                     <br>
-                    <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#">Play Now!</a>
+                    <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#roulettegame">Play Now!</a>
                 </div>
                 <div class="center-align">
                 </div>
@@ -181,7 +183,37 @@
         </div>
     </div>
 </div>
-<div id="slotgame" class="modal grey darken-4 white-text">
+<div id="slotgame" class="modal grey darken-4 white-text" style="max-height: 100%; overflow: visible;">
+    <div class="modal-content">
+
+
+        <div class="row">
+            <div class="col s12">
+                <div class="monitor">
+                    <div class="slot-photo-wrapper">
+                        <img src="/src/img/seven-section.png" alt="" srcset="" class="slot-photo slot1 ">
+                    </div>
+                    <div class="slot-photo-wrapper">
+                        <img src="/src/img/coin-section.png" alt="" srcset="" class="slot-photo slot2">
+                    </div>
+                    <div class="slot-photo-wrapper">
+                        <img src="/src/img/cherry-section.png" alt="" srcset="" class="slot-photo slot3">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="controls">
+                    <h4 style="margin: 5%;">Total win: <span class="green-text">0$</span></h4>
+                    <h5>Current amount of money: <span class="green-text">0$</span></h5>
+                    <input type="number" placeholder="Your bet" class="white-text bet-field">
+                    <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="roulettegame" class="modal grey darken-4 white-text">
     <div class="modal-content">
 
 
@@ -201,10 +233,10 @@
             </div>
             <div class="col s12 m4">
                 <div class="controls">
-                    <h4>Total win: <span class="green-text">0$</span></h4>
+                    <h4 style="margin: 5%;">Total win: <span class="green-text">0$</span></h4>
                     <h5>Current amount of money: <span class="green-text">0$</span></h5>
                     <input type="number" placeholder="Your bet" class="white-text">
-                    <button class="custom-btn-green spin-button" style="background: transparent; color: white;">SPIN!</button>
+                    <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
                 </div>
             </div>
 

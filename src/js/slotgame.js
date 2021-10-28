@@ -6,28 +6,29 @@ function preloadImage(url) {
 
 function blurMonitor() {
     document.querySelector(".monitor").style.filter = "blur(5px)";
-    console.log("Monitor has been blurred")
 }
 
 function unBlurMonitor() {
     document.querySelector(".monitor").style.filter = "blur(0px)";
-    console.log("Monitor has been unblured")
 }
 
 async function rotateSlot(images) {
     blurMonitor()
 
     await setTimeout(unBlurMonitor, 5000)
+    let currentTime = new Date().getTime()
+    var slotsWrappers = document.querySelectorAll(".slot-photo-wrapper")
+    var slots = []
 
-    // var slotsWrappers = document.querySelectorAll(".slot-photo-wrapper")
-    // var slots = []
-    // slotsWrappers.forEach(slotWrapper => slots.push(slotWrapper.children[0]))
-    // console.log(slots)
-    // slots.forEach(slot => {
-    //     slot.src = images[Math.floor(Math.random() * images.length)].src.slice(22)
-    // })
+    setInterval(() => {
+        if (new Date().getTime() - currentTime >= 5000)
+            return
+        slotsWrappers.forEach(slotWrapper => slots.push(slotWrapper.children[0]))
+        slots.forEach(slot => {
+            slot.src = images[Math.floor(Math.random() * images.length)].src.slice(22)
+        })
+    }, 50)
 
-    // unBlurMonitor()
 }
 
 let cherry = preloadImage("/src/img/cherry-section.png")
