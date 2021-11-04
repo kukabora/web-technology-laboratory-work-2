@@ -3,7 +3,7 @@ function getRandomInt(max) {
 }
 
 let back = document.querySelector(".background");
-let preparedString = 'url("/src/img/personal-cabinet-';
+let preparedString = 'url("../img/personal-cabinet-';
 let numberOfPhoto = getRandomInt(4);
 
 

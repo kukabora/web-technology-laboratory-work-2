@@ -6,7 +6,7 @@ setInterval(() => {
     let bckgd = document.querySelector(".main-bckgd")
     backgroundCounter %= 3;
     backgroundCounter += 1;
-    bckgd.style.backgroundImage = 'url("/src/img/background-image' + backgroundCounter + '.jpg")';
+    bckgd.style.backgroundImage = 'url("/static/img/background-image' + backgroundCounter + '.jpg")';
 }, 15000)
 
 
@@ -14,7 +14,7 @@ leftButton.onclick = (e) => {
     let canvas = e.target.parentNode.parentNode;
     backgroundCounter %= 3;
     backgroundCounter += 1;
-    canvas.style.backgroundImage = 'url("/src/img/background-image' + backgroundCounter + '.jpg")';
+    canvas.style.backgroundImage = 'url("/static/img/background-image' + backgroundCounter + '.jpg")';
 }
 
 rightButton.onclick = (e) => {
@@ -26,5 +26,5 @@ rightButton.onclick = (e) => {
     if (backgroundCounter == 0) {
         backgroundCounter += 3;
     }
-    canvas.style.backgroundImage = 'url("/src/img/background-image' + backgroundCounter + '.jpg")';
+    canvas.style.backgroundImage = 'url("/static/img/background-image' + backgroundCounter + '.jpg")';
 }

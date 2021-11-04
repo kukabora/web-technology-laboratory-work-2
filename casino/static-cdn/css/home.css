@@ -1,5 +1,5 @@
 .main-bckgd {
-    background-image: url("/src/img/background-image1.jpg");
+    background-image: url("../img/background-image1.jpg");
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -21,7 +21,7 @@
 }
 
 .left-divided-section {
-    background-image: url("/src/img/divided-section-1.jpg");
+    background-image: url("../img/divided-section-1.jpg");
     background-position: center;
     background-size: cover;
     padding: 0% !important;
@@ -32,7 +32,7 @@
 .right-divided-section {
     padding: 0% !important;
     margin: 0%;
-    background-image: url("/src/img/divided-section-2.jpg");
+    background-image: url("../img/divided-section-2.jpg");
     background-position: center;
     background-size: cover;
 }

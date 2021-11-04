@@ -1,5 +1,5 @@
 .background {
-    background-image: url("/src/img/feedback_background.jpg");
+    background-image: url("../img/feedback_background.jpg");
     background-position: center;
     background-size: cover;
 }

@@ -31,9 +31,9 @@ async function rotateSlot(images) {
 
 }
 
-let cherry = preloadImage("/src/img/cherry-section.png")
-let coin = preloadImage("/src/img/coin-section.png")
-let seven = preloadImage("/src/img/seven-section.png")
+let cherry = preloadImage("/static/img/cherry-section.png")
+let coin = preloadImage("/static/img/coin-section.png")
+let seven = preloadImage("/static/img/seven-section.png")
 
 let spinButton = document.querySelector(".spin-button")
 spinButton.onclick = (e) => { rotateSlot([cherry, coin, seven]) }

@@ -1,5 +1,5 @@
 .background {
-    background-image: url(/src/img/FAQ_background.jpg);
+    background-image: url(../img/FAQ_background.jpg);
     background-position: center;
     background-size: cover;
 }

@@ -1,5 +1,5 @@
 .background {
-    background-image: url("/src/img/reg-form-basckground.jpg");
+    background-image: url("../img/reg-form-basckground.jpg");
     background-position: center;
     background-size: cover;
 }

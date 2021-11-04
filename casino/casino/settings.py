@@ -121,10 +121,10 @@ USE_TZ = True
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_URL = os.path.join(BASE_DIR, 'static') + '/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static-cdn')
-MEDIA_URL = os.path.join(BASE_DIR, 'media') + '/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media-cdn')
+STATIC_URL = 'static' + '/'
+STATIC_ROOT = 'static-cdn'
+MEDIA_URL = 'media' + '/'
+MEDIA_ROOT = 'media-cdn'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
