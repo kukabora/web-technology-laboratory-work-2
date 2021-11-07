@@ -19,6 +19,11 @@ def games(request):
     return render(request, 'Evdokimov/games.html')
 
 
+def logging_out(request):
+    logout(request)
+    return redirect("main")
+
+
 def logging_in(request):
     context = {}
     if request.method == "POST":

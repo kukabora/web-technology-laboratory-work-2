@@ -19,6 +19,7 @@ class Player(models.Model):
     hotel_room = models.CharField(
         name="hotel_room", null=False, max_length=5)
     favorite_slot = models.CharField(max_length=15, name="favorite_slot")
+    balance = models.IntegerField(name="balance", default=0)
 
     class Meta:
         verbose_name = 'Player'
