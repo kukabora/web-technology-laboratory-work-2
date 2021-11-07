@@ -142,21 +142,33 @@
             class="container center-align"
             style="padding: 1%"
           >
+            <div class="input-field">{% csrf_token %}</div>
+            {% if err %}
+            <h2
+              class="cursive-text center-align red-text"
+              style="font-size: calc(1vw + 1em + 15px)"
+            >
+              {{err}}
+            </h2>
+            {% else %}
             <h2
               class="cursive-text center-align"
               style="font-size: calc(1vw + 1em + 15px)"
             >
-              Sing in your account
+              Sign in to your account
             </h2>
+            {% endif %}
             <div class="input-field">
               <input
+                name="username"
                 type="text"
-                placeholder="Email"
+                placeholder="username"
                 class="thin-writing white-text custom-input"
               />
             </div>
             <div class="input-field">
               <input
+                name="password"
                 type="password"
                 placeholder="Password"
                 class="thin-writing white-text custom-input"

@@ -142,14 +142,25 @@
             class="container center-align"
             style="padding: 1%"
           >
+            <div class="input-field">{% csrf_token %}</div>
+            {% if err %}
+            <h2
+              class="cursive-text center-align red-text"
+              style="font-size: calc(1vw + 1em + 15px)"
+            >
+              {{err}}
+            </h2>
+            {% else %}
             <h2
               class="cursive-text center-align"
               style="font-size: calc(1vw + 1em + 15px)"
             >
               Fill the form below
             </h2>
+            {% endif %}
             <div class="input-field">
               <input
+                name="username"
                 type="text"
                 placeholder="Login"
                 class="thin-writing white-text custom-input"
@@ -157,6 +168,7 @@
             </div>
             <div class="input-field">
               <input
+                name="email"
                 type="text"
                 placeholder="Email"
                 class="thin-writing white-text custom-input"
@@ -164,6 +176,7 @@
             </div>
             <div class="input-field">
               <input
+                name="password"
                 type="password"
                 placeholder="Password"
                 class="thin-writing white-text custom-input"
@@ -171,6 +184,15 @@
             </div>
             <div class="input-field">
               <input
+                name="password_confirm"
+                type="password"
+                placeholder="Confrirm password"
+                class="thin-writing white-text custom-input"
+              />
+            </div>
+            <div class="input-field">
+              <input
+                name="fname"
                 type="text"
                 placeholder="First Name"
                 class="thin-writing white-text custom-input"
@@ -178,6 +200,7 @@
             </div>
             <div class="input-field">
               <input
+                name="lname"
                 type="text"
                 placeholder="Second Name"
                 class="thin-writing white-text custom-input"
@@ -185,6 +208,7 @@
             </div>
             <div class="input-field">
               <input
+                name="bday"
                 placeholder="Birth Date"
                 class="textbox-n thin-writing white-text custom-input"
                 type="text"
@@ -195,6 +219,7 @@
             </div>
             <div class="input-field">
               <input
+                name="country"
                 type="text"
                 id="autocomplete-input"
                 placeholder="Country"

@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import datetime
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
+from .models import *
 
 # Create your views here.
 
@@ -15,8 +19,20 @@ def games(request):
     return render(request, 'Evdokimov/games.html')
 
 
-def login(request):
-    return render(request, 'Evdokimov/login.html')
+def logging_in(request):
+    context = {}
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("profile")
+        else:
+            context['err'] = "No such user!"
+            return render(request, 'Evdokimov/login.html', context)
+
+    return render(request, 'Evdokimov/login.html', context)
 
 
 def profile(request):
@@ -24,7 +40,33 @@ def profile(request):
 
 
 def registration(request):
-    return render(request, 'Evdokimov/registration.html')
+    context = {}
+    if request.method == "POST":
+        if request.POST['password'] != request.POST['password_confirm']:
+            context['err'] = "Passwords aren't matching!"
+            return render(request, "Evdokimov/registration.html", context)
+        b_day = request.POST['bday']
+        parsed_birth_day = b_day.split("-")
+        date = datetime.date.today()
+        year = date.strftime("%Y")
+        if int(year)-int(parsed_birth_day[0]) < 21:
+            context['err'] = "You must be 21 years old or older to access this site!"
+            return render(request, "Evdokimov/registration.html", context)
+        username = request.POST['username']
+        first_name = request.POST['fname']
+        last_name = request.POST['lname']
+        email = request.POST['email']
+        password = request.POST['password']
+        country = request.POST['country']
+        user = User.objects.create_user(
+            first_name=first_name, username=username, last_name=last_name, email=email, password=password)
+        user.save()
+        is_senior = int(year)-int(parsed_birth_day[0]) >= 60
+        player = Player(user=user, country=country, age=int(
+            year)-int(parsed_birth_day[0]), is_senior=is_senior, win=0, lost=0, hotel_room=user.id, favorite_slot="None")
+        player.save()
+    context['err'] = "Account successfully created! You can now go to signing-in!"
+    return render(request, 'Evdokimov/registration.html', context)
 
 
 def schedule(request):
