@@ -1,6 +1,7 @@
 .main-info {
     background-color: rgba(27, 27, 27, 0.95);
     padding: 1%;
+    min-height: 1080px;
 }
 
 .user-profile-photo {
