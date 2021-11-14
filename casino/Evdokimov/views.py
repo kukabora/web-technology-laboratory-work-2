@@ -70,7 +70,7 @@ def registration(request):
         player = Player(user=user, country=country, age=int(
             year)-int(parsed_birth_day[0]), is_senior=is_senior, win=0, lost=0, hotel_room=user.id, favorite_slot="None")
         player.save()
-    context['err'] = "Account successfully created! You can now go to signing-in!"
+        context['err'] = "Account successfully created! You can now go to signing-in!"
     return render(request, 'Evdokimov/registration.html', context)
 
 
