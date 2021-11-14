@@ -1,5 +1,10 @@
 from django.urls import path
 from . import views
+from . import api
+
+api_urlpatterns = [
+    path("api/updateBalance", api.updateBalance),
+]
 
 urlpatterns = [
     path('', views.index, name="main"),
@@ -12,3 +17,5 @@ urlpatterns = [
     path('schedule', views.schedule),
     path('logout', views.logging_out)
 ]
+
+urlpatterns += api_urlpatterns
