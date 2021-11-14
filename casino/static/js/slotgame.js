@@ -54,9 +54,11 @@ var seven = preloadImage("static/img/seven-section.png")
 
 var spinButton = document.querySelector(".spin-button")
 spinButton.onclick = async(e) => {
-    let balance = document.querySelector(".user-balance").innerHTML
-    let bet = document.querySelector(".bet-field").value
-    document.querySelector(".user-balance").innerHTML = +balance - +bet
+    let balance = document.querySelector(".user-balance").innerHTML.slice(0, -1)
+    let bet = +document.querySelector(".bet-field").value
+    if (+bet > +balance || +bet < 0)
+        return false;
+    document.querySelector(".user-balance").innerHTML = +balance - +bet + "$"
     if (e.target.classList.contains("spin-button")) {
         rotateSlot([cherry, coin, seven], e.target);
         setTimeout(async() => {
@@ -73,14 +75,14 @@ spinButton.onclick = async(e) => {
                     sevens++;
             })
             if (cherrys == 2 || coins == 2 || sevens == 2) {
-                let bet = document.querySelector(".bet-field").value
+                let bet = +document.querySelector(".bet-field").value
                 let userId = document.querySelector(".user_id").getAttribute("userId")
                 let token = getCookie("csrftoken")
                 var myHeaders = new Headers();
                 myHeaders.append("X-CSRFToken", token);
 
                 var formdata = new FormData();
-                formdata.append("balanceDifference", bet * 0.5);
+                formdata.append("balanceDifference", bet);
                 formdata.append("userId", userId);
 
                 var requestOptions = {
@@ -94,11 +96,16 @@ spinButton.onclick = async(e) => {
                     .then(response => response.json())
                     .then(result => {
                         let balance = document.querySelector(".user-balance")
-                        balance.innerHTML = result.newBalance;
+                        balance.innerHTML = result.newBalance + "$";
+                        let betField = document.querySelector(".bet-field")
+                        betField.max = result.newBalance + "$"
+                        let totalwin = document.querySelector(".total-win")
+                        totalwin.innerHTML = result.balanceChange + "$";
+                        M.toast({ html: '<h5>We have a winner!<h5>' })
                     })
                     .catch(error => console.log('error', error));
             } else if (cherrys == 3 || coins == 3 || sevens == 3) {
-                let bet = document.querySelector(".bet-field").value
+                let bet = +document.querySelector(".bet-field").value
                 let userId = document.querySelector(".user_id").getAttribute("userId")
                 let token = getCookie("csrftoken")
                 var myHeaders = new Headers();
@@ -119,11 +126,16 @@ spinButton.onclick = async(e) => {
                     .then(response => response.json())
                     .then(result => {
                         let balance = document.querySelector(".user-balance")
-                        balance.innerHTML = result.newBalance;
+                        balance.innerHTML = result.newBalance + "$";
+                        let betField = document.querySelector(".bet-field")
+                        betField.max = result.newBalance + "$"
+                        let totalwin = document.querySelector(".total-win")
+                        totalwin.innerHTML = result.balanceChange + "$"
+                        M.toast({ html: '<h5>Awesome!<h5>' })
+
                     })
                     .catch(error => console.log('error', error));
             } else {
-                M.toast({ html: '<h4>Try again!</h4>' });
                 let bet = document.querySelector(".bet-field").value
                 let userId = document.querySelector(".user_id").getAttribute("userId")
                 let token = getCookie("csrftoken")
@@ -144,7 +156,12 @@ spinButton.onclick = async(e) => {
                     .then(response => response.json())
                     .then(result => {
                         let balance = document.querySelector(".user-balance")
-                        balance.innerHTML = result.newBalance;
+                        balance.innerHTML = result.newBalance + "$";
+                        let betField = document.querySelector(".bet-field")
+                        betField.max = result.newBalance + "$";
+                        let totalwin = document.querySelector(".total-win")
+                        totalwin.innerHTML = "0$"
+                        M.toast({ html: '<h5>Try again!<h5>' })
                     })
                     .catch(error => console.log('error', error));
             }
