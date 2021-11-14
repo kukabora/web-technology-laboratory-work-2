@@ -5,6 +5,10 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta token={{ csrf_token }} class="csrf_token">
+    {% if user.is_authenticated %}
+    <meta userId={{ user.id }} class="user_id">
+    {% endif %}
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/games.css' %}" />
@@ -163,7 +167,6 @@
         >{% endif %}
       </div>
     </div>
-
     <div class="background">
       <div class="inner-canvas" style="padding: 2% 3% 2% 3%">
         <div class="row center-align">
@@ -242,8 +245,8 @@
             <div class="col s12">
                 <div class="controls">
                     <h4 style="margin: 5%;">Total win: <span class="green-text">0$</span></h4>
-                    <h5>Current amount of money: <span class="green-text">0$</span></h5>
-                    <input type="number" placeholder="Your bet" class="white-text bet-field">
+                    <h5>Current amount of money: <span class="green-text user-balance">{{user.player.balance}}$</span></h5>
+                    <input type="number" value="0" class="white-text bet-field" max="{{user.player.balance}}" required>
                     <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
                 </div>
             </div>
