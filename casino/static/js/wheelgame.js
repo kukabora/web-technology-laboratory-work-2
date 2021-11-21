@@ -20,6 +20,8 @@ spinBtn.onclick = (e) => {
         won = 0
     } else if ((degrees > 45 && degrees <= 90) || (degrees > 135 && degrees < 180) || (degrees > 270 && degrees < 315)) {
         won = -bet
+    } else {
+        won = 0
     }
     console.log(won)
     let userId = document.querySelector(".user_id").getAttribute("userId")
