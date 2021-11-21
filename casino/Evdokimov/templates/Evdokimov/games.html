@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <meta token={{ csrf_token }} class="csrf_token">
-    {% if user.is_authenticated %}
-    <meta userId={{ user.id }} class="user_id">
-    {% endif %}
+    <meta token={{ csrf_token }} class="csrf_token"> {% if user.is_authenticated %}
+    <meta userId={{ user.id }} class="user_id"> {% endif %}
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/games.css' %}" />
@@ -19,12 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab Work #2</title>
 </head>
+
 <body>
-<div class="header">
-      <div class="row" style="margin: 0%">
-        <div class="col s1">
-          <a href="#" data-target="slide-out" class="sidenav-trigger"
-            ><i class="material-icons inline-icon custom-beige-font">menu</i></a
+    <div class="header">
+        <div class="row" style="margin: 0%">
+            <div class="col s1">
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons inline-icon custom-beige-font">menu</i></a
           ><a
             href="#"
             data-target="slide-out"
@@ -58,10 +55,9 @@
         </div>
         <div class="col s9 m2 offset-m2">
           <a href="/" class="logo">Evdokimov</a>
-        </div>
-        <div class="col s1 m1 offset-m3 center-align">
-          <a href="#"
-            ><i class="material-icons inline-icon custom-beige-font"
+            </div>
+            <div class="col s1 m1 offset-m3 center-align">
+                <a href="#"><i class="material-icons inline-icon custom-beige-font"
               >date_range</i
             ></a
           ><a
@@ -115,9 +111,8 @@
           <a href="#" class="white-text">
             <h6 class="cursive-text"><u>Withdraw</u></h6>
           </a>
-          <hr />
-          <a href="games" class="white-text navbar-buttons"
-            ><i class="material-icons inline-icon">games</i>Games</a
+                <hr />
+                <a href="games" class="white-text navbar-buttons"><i class="material-icons inline-icon">games</i>Games</a
           >
           <a href="profile" class="white-text navbar-buttons"
             ><i class="material-icons inline-icon">account_circle</i>Personal
@@ -181,144 +176,147 @@
                               <img class="game-logo" src="{% static 'img/one-armed-bandit-logo.png' %}" alt="">
                                 <br>
                                 <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#slotgame">Play Now!</a>
-        </div>
-        <div class="center-align">
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
-<div class="col l4 m6 s12 white-text">
-    <div class="game-card">
-        <div class="card-header">
-            <h2 style="font-size: calc(1.5vw + 1.5em);">Pirate's hat</h2>
-            <div class="card-background">
-                <div class="card-info-container white-text center-align">
-                    <p>"ARRGGHH!!! Give me that bottle of nice-brewed rome! I am going to make some serious money in here!" - That's what real pirate would say! Test your luck in this beautiful designed game: <u>Pirate's hat!</u></p>
-                    <img class="game-logo" src="{% static 'img/pirates-hat-logo.png' %}" alt="">
-                    <br>
-                    <a class="custom-btn-red btn-background-dark thin-writing red-text modal-trigger">Coming soon!</a>
-                </div>
-                <div class="center-align">
-                </div>
+            </div>
+            <div class="center-align">
             </div>
         </div>
     </div>
-</div>
-<div class="col l4 m6 s12 white-text">
-    <div class="game-card">
-        <div class="card-header">
-            <h2 style="font-size: calc(1.5vw + 1.5em);">Classic wheel of fortune</h2>
-            <div class="card-background">
-                <div class="card-info-container white-text center-align">
-                    <p>You are a boomer who recognizes only an Old School games? Awesome! Only at our casino you can spin the wheel of fortune and try your luck to win some good cash! Ladies and gentleman, let me introduce you to <u>Wheel of Fortune!</u>
-                    </p>
-                    <img class="game-logo" src="{% static 'img/roulette-logo.png' %}" alt="">
-                    <br>
-                    <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#roulettegame">Play Now!</a>
-                </div>
-                <div class="center-align">
-                </div>
-            </div>
-        </div>
     </div>
-</div>
-<div id="slotgame" class="modal grey darken-4 white-text" style="max-height: 100%; overflow: visible;">
-    <div class="modal-content">
+    </div>
 
-
-        <div class="row">
-            <div class="col s12">
-                <div class="monitor">
-                    <div class="slot-photo-wrapper">
-                        <img src="{% static 'img/seven-section.png' %}" alt="" srcset="" class="slot-photo slot1 ">
+    <div class="col l4 m6 s12 white-text">
+        <div class="game-card">
+            <div class="card-header">
+                <h2 style="font-size: calc(1.5vw + 1.5em);">Pirate's hat</h2>
+                <div class="card-background">
+                    <div class="card-info-container white-text center-align">
+                        <p>"ARRGGHH!!! Give me that bottle of nice-brewed rome! I am going to make some serious money in here!" - That's what real pirate would say! Test your luck in this beautiful designed game: <u>Pirate's hat!</u></p>
+                        <img class="game-logo" src="{% static 'img/pirates-hat-logo.png' %}" alt="">
+                        <br>
+                        <a class="custom-btn-red btn-background-dark thin-writing red-text modal-trigger">Coming soon!</a>
                     </div>
-                    <div class="slot-photo-wrapper">
-                        <img src="{% static 'img/coin-section.png' %}" alt="" srcset="" class="slot-photo slot2">
-                    </div>
-                    <div class="slot-photo-wrapper">
-                        <img src="{% static 'img/cherry-section.png' %}" alt="" srcset="" class="slot-photo slot3">
+                    <div class="center-align">
                     </div>
                 </div>
             </div>
-            <div class="col s12">
-                <div class="controls">
-                    <h4 style="margin: 5%;">Total win: <span class="green-text total-win">0$</span></h4>
-                    <h5>Current amount of money: <span class="green-text user-balance">{{user.player.balance}}$</span></h5>
-                    <input type="number" value="0" class="white-text bet-field" max="{{user.player.balance}}" required>
-                    <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
-                </div>
-            </div>
-
         </div>
     </div>
-</div>
-<div id="roulettegame" class="modal grey darken-4 white-text" style="max-height: 100% !important;">
-    <div class="modal-content">
+    <div class="col l4 m6 s12 white-text">
+        <div class="game-card">
+            <div class="card-header">
+                <h2 style="font-size: calc(1.5vw + 1.5em);">Classic wheel of fortune</h2>
+                <div class="card-background">
+                    <div class="card-info-container white-text center-align">
+                        <p>You are a boomer who recognizes only an Old School games? Awesome! Only at our casino you can spin the wheel of fortune and try your luck to win some good cash! Ladies and gentleman, let me introduce you to <u>Wheel of Fortune!</u>
+                        </p>
+                        <img class="game-logo" src="{% static 'img/roulette-logo.png' %}" alt="">
+                        <br>
+                        <a class="custom-btn-green btn-background-dark thin-writing play-btn modal-trigger" href="#roulettegame">Play Now!</a>
+                    </div>
+                    <div class="center-align">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="slotgame" class="modal grey darken-4 white-text" style="max-height: 100%; overflow: visible;">
+        <div class="modal-content">
 
 
-        <div class="row">
-            <div class="col s12 m8">
-                <div id="mainbox" class="mainbox animate">
-                    <div id="box" class="box" style="transform: rotate(4709deg);">
-                        <div class="box1">
-                            <span class="span1 amber"><b>Bankrupt</b></span>
-                            <span class="span2 green"><b>7500</b></span>
-                            <span class="span3 red darken-4"><b>Bankrupt</b></span>
-                            <span class="span4 red darken-4"><b>Joker</b></span>
+            <div class="row">
+                <div class="col s12">
+                    <div class="monitor">
+                        <div class="slot-photo-wrapper">
+                            <img src="{% static 'img/seven-section.png' %}" alt="" srcset="" class="slot-photo slot1 ">
                         </div>
-                        <div class="box2">
-                            <span class="span1 green"><b>Shoplifters</b></span>
-                            <span class="span2 red darken-4"><b>Inception</b></span>
-                            <span class="span3 black"><b>Deadpool</b></span>
-                            <span class="span4 green"><b>Terminator</b></span>
+                        <div class="slot-photo-wrapper">
+                            <img src="{% static 'img/coin-section.png' %}" alt="" srcset="" class="slot-photo slot2">
+                        </div>
+                        <div class="slot-photo-wrapper">
+                            <img src="{% static 'img/cherry-section.png' %}" alt="" srcset="" class="slot-photo slot3">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col s12 m4 valign-wrapper">
-                <div class="controls">
-                    <h4 style="margin: 5%;">Total win: <span class="green-text">0$</span></h4>
-                    <h5>Current amount of money: <span class="green-text">0$</span></h5>
-                    <input type="number" placeholder="Your bet" class="white-text bet-field">
-                    <button class="custom-btn-green spin-wheel-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
+                <div class="col s12">
+                    <div class="controls">
+                        <h4 style="margin: 5%;">Total win: <span class="green-text total-win">0$</span></h4>
+                        <h5>Current amount of money: <span class="green-text user-balance">{{user.player.balance}}$</span></h5>
+                        <input type="number" value="0" class="white-text bet-field" max="{{user.player.balance}}" required>
+                        <button class="custom-btn-green spin-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-<script src="{% static 'js/randomBackground.js' %}"></script>
+    <div id="roulettegame" class="modal grey darken-4 white-text" style="max-height: 100% !important;">
+        <div class="modal-content">
 
-<div class="white-text footer center-align">
-    <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
-    <a href="#" class="white-text">Instagram</a><br />
-    <a href="#" class="white-text">Facebook</a><br />
-    <a href="#" class="white-text">LinkedIN</a><br />
-    <p class="signature cursive-text">
-        Made specially for web-technologies course by Lee Alexander.
-    </p>
-</div>
-<script src="{% static 'js/materialize.js' %}"></script>
-<script src="{% static 'js/wheelgame.js' %}"></script>
-<script src="{% static 'js/slotgame.js' %}"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.modal');
-        var options = {};
-        var instances = M.Modal.init(elems, options);
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var elems = document.querySelectorAll(".sidenav");
-        var options = {};
-        var instances = M.Sidenav.init(elems, options);
-    });
-</script>
+
+            <div class="row">
+                <div class="col s12 m8">
+                    <div id="mainbox" class="mainbox animate">
+                        <div class="center-align white-text">
+                            <i class="material-icons">arrow_downward</i>
+                        </div>
+                        <div id="box" class="box">
+                            <div class="box1">
+                                <span class="span1 amber"><b>Try again</b></span>
+                                <span class="span2 green"><b>x3</b></span>
+                                <span class="span3 red darken-4"><b>Bankrupt</b></span>
+                                <span class="span4 red darken-4"><b>Bankrupt</b></span>
+                            </div>
+                            <div class="box2">
+                                <span class="span1 green"><b>x3</b></span>
+                                <span class="span2 red darken-4"><b>Bankrupt</b></span>
+                                <span class="span3 black"><b>Loss</b></span>
+                                <span class="span4 green"><b>x3</b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4 valign-wrapper">
+                    <div class="controls">
+                        <h4 style="margin: 5%;">Total win: <span class="green-text wheel-total-win">0$</span></h4>
+                        <h5>Current amount of money: <span class="green-text user-wheel-balance">{{user.player.balance}}$</span></h5>
+                        <input type="number" placeholder="Your bet" class="white-text wheel-bet-field">
+                        <button class="custom-btn-green spin-wheel-button" style="background: transparent; color: white; font-size: calc(1vw + 1em);">SPIN!</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="{% static 'js/randomBackground.js' %}"></script>
+
+    <div class="white-text footer center-align">
+        <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
+        <a href="#" class="white-text">Instagram</a><br />
+        <a href="#" class="white-text">Facebook</a><br />
+        <a href="#" class="white-text">LinkedIN</a><br />
+        <p class="signature cursive-text">
+            Made specially for web-technologies course by Lee Alexander.
+        </p>
+    </div>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/wheelgame.js' %}"></script>
+    <script src="{% static 'js/slotgame.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var options = {};
+            var instances = M.Modal.init(elems, options);
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var elems = document.querySelectorAll(".sidenav");
+            var options = {};
+            var instances = M.Sidenav.init(elems, options);
+        });
+    </script>
 </body>
 
 </html>

@@ -126,9 +126,9 @@
 }
 
 .box1>.span1>b {
-    transform: rotate(110deg);
+    transform: rotate( 116deg);
     top: 25%;
-    left: 60%;
+    left: 50%;
 }
 
 .box1>.span2>b {
