@@ -26,3 +26,13 @@
 .info-block {
     padding: 2%;
 }
+
+.update-avatar-btn {
+    background-color: transparent;
+    display: block;
+}
+
+.cancel-updating-btn {
+    background-color: transparent;
+    display: block;
+}

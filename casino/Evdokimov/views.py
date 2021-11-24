@@ -19,6 +19,19 @@ def games(request):
     return render(request, 'Evdokimov/games.html')
 
 
+def addPlayerImage(request):
+    if request.method == "POST":
+        postfix = request.FILES['newAvatar'].name[request.FILES['newAvatar'].name.rfind(
+            "."):]
+        title = request.user.email
+        request.FILES['newAvatar'].name = request.user.email+postfix
+        user = User.objects.get(id=request.user.id)
+        user.player.avatar = request.FILES['newAvatar']
+        user.save()
+        user.player.save()
+    return redirect("profile")
+
+
 def logging_out(request):
     logout(request)
     return redirect("main")
