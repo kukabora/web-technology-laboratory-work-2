@@ -15,7 +15,10 @@ def updateBalance(request):
         "newBalance": int(request.user.player.balance) + int(request.POST['balanceDifference'])
     }
     user.player.balance += int(request.POST['balanceDifference'])
+    if int(request.POST['balanceDifference']) > 0:
+        user.player.win += int(request.POST['balanceDifference'])
+    else:
+        user.player.lost += int(request.POST['balanceDifference'])
     user.save()
     user.player.save()
-    print(data)
     return JsonResponse(data=data, safe=False)

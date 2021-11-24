@@ -39,7 +39,7 @@ spinBtn.onclick = (e) => {
         body: formdata,
         redirect: 'follow'
     };
-
+    console.log(requestOptions)
     fetch("http://127.0.0.1:8000/api/updateBalance", requestOptions)
         .then(response => response.json())
         .then(result => {
