@@ -19,6 +19,16 @@ def games(request):
     return render(request, 'Evdokimov/games.html')
 
 
+def payment(request):
+    if request.method == "POST":
+        user = User.objects.get(id=request.user.id)
+        user.player.balance += int(request.POST['amount'])
+        user.save()
+        user.player.save()
+        return redirect("profile")
+    return render(request, 'Evdokimov/payment.html')
+
+
 def addPlayerImage(request):
     if request.method == "POST":
         postfix = request.FILES['newAvatar'].name[request.FILES['newAvatar'].name.rfind(
