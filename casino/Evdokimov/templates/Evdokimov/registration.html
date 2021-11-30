@@ -1,22 +1,25 @@
 <!DOCTYPE html> {% load static %}
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/registration-form.css' %}" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab Work #2</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <div class="row" style="margin: 0%">
-            <div class="col s1">
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons inline-icon custom-beige-font">menu</i></a
+      <div class="row" style="margin: 0%">
+        <div class="col s1">
+          <a href="#" data-target="slide-out" class="sidenav-trigger"
+            ><i class="material-icons inline-icon custom-beige-font">menu</i></a
           ><a
             href="#"
             data-target="slide-out"
@@ -50,9 +53,10 @@
         </div>
         <div class="col s9 m2 offset-m2">
           <a href="/" class="logo">Evdokimov</a>
-            </div>
-            <div class="col s1 m1 offset-m3 center-align">
-                <a href="#"><i class="material-icons inline-icon custom-beige-font"
+        </div>
+        <div class="col s1 m1 offset-m3 center-align">
+          <a href="#"
+            ><i class="material-icons inline-icon custom-beige-font"
               >date_range</i
             ></a
           ><a
@@ -102,11 +106,12 @@
           {% else %}
           <h5 class="white-text">Balance: 0$</h5>
           {% endif %}
-          <a href="#" class="white-text">
+          <a href="payment" class="white-text">
             <h6 class="cursive-text"><u>Withdraw</u></h6>
           </a>
-                <hr />
-                <a href="games" class="white-text navbar-buttons"><i class="material-icons inline-icon">games</i>Games</a
+          <hr />
+          <a href="games" class="white-text navbar-buttons"
+            ><i class="material-icons inline-icon">games</i>Games</a
           >
           <a href="profile" class="white-text navbar-buttons"
             ><i class="material-icons inline-icon">account_circle</i>Personal
@@ -270,31 +275,30 @@
     <div class="white-text footer center-align">
       <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
       <a href="#" class="white-text">Instagram</a><br />
-                <a href="#" class="white-text">Facebook</a><br />
-                <a href="#" class="white-text">LinkedIN</a><br />
-                <p class="signature cursive-text">
-                    Made specially for web-technologies course by Lee Alexander.
-                </p>
-            </div>
-            <script src="{% static 'js/materialize.js' %}"></script>
-            <script src="{% static 'js/getAllCountryInfo.js' %}"></script>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var elems = document.querySelectorAll(".autocomplete");
-                    var options = {
-                        data: countryData,
-                        limit: 3,
-                    };
-                    var instances = M.Autocomplete.init(elems, options);
-                });
-            </script>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var elems = document.querySelectorAll(".sidenav");
-                    var options = {};
-                    var instances = M.Sidenav.init(elems, options);
-                });
-            </script>
-</body>
-
+      <a href="#" class="white-text">Facebook</a><br />
+      <a href="#" class="white-text">LinkedIN</a><br />
+      <p class="signature cursive-text">
+        Made specially for web-technologies course by Lee Alexander.
+      </p>
+    </div>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script src="{% static 'js/getAllCountryInfo.js' %}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".autocomplete");
+        var options = {
+          data: countryData,
+          limit: 3,
+        };
+        var instances = M.Autocomplete.init(elems, options);
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var options = {};
+        var instances = M.Sidenav.init(elems, options);
+      });
+    </script>
+  </body>
 </html>
