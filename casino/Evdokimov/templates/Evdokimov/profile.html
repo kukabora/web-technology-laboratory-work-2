@@ -1,23 +1,26 @@
 <!DOCTYPE html> {% load static %}
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta token={{ csrf_token }} class="csrf_token">
+    <meta token="{{ csrf_token }}" class="csrf_token" />
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab Work #2</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <div class="row" style="margin: 0%">
-            <div class="col s1">
-                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons inline-icon custom-beige-font">menu</i></a
+      <div class="row" style="margin: 0%">
+        <div class="col s1">
+          <a href="#" data-target="slide-out" class="sidenav-trigger"
+            ><i class="material-icons inline-icon custom-beige-font">menu</i></a
           ><a
             href="#"
             data-target="slide-out"
@@ -51,9 +54,10 @@
         </div>
         <div class="col s9 m2 offset-m2">
           <a href="/" class="logo">Evdokimov</a>
-            </div>
-            <div class="col s1 m1 offset-m3 center-align">
-                <a href="#"><i class="material-icons inline-icon custom-beige-font"
+        </div>
+        <div class="col s1 m1 offset-m3 center-align">
+          <a href="#"
+            ><i class="material-icons inline-icon custom-beige-font"
               >date_range</i
             ></a
           ><a
@@ -104,11 +108,12 @@
           {% else %}
           <h5 class="white-text">Balance: 0$</h5>
           {% endif %}
-          <a href="#" class="white-text">
+          <a href="payment" class="white-text">
             <h6 class="cursive-text"><u>Withdraw</u></h6>
           </a>
-                <hr />
-                <a href="games" class="white-text navbar-buttons"><i class="material-icons inline-icon">games</i>Games</a
+          <hr />
+          <a href="games" class="white-text navbar-buttons"
+            ><i class="material-icons inline-icon">games</i>Games</a
           >
           <a href="profile" class="white-text navbar-buttons"
             ><i class="material-icons inline-icon">account_circle</i>Personal
@@ -185,51 +190,58 @@
               />
               {% endif %}
               <div class="center-align">
-                <a class="white-text custom-btn update-avatar-btn">Update avatar</a>
+                <a class="white-text custom-btn update-avatar-btn"
+                  >Update avatar</a
+                >
+              </div>
             </div>
-
-        </div>
-        <div class="col s12 m9">
-            <div class="row center-align">
+            <div class="col s12 m9">
+              <div class="row center-align">
                 <div class="col s12 m6 x2">
-                    <div class="info-block">
-                        <span class="white-text info-label">First name:</span>
-                        <span class="white-text thin-writing info-data">{{user.first_name}}</span
+                  <div class="info-block">
+                    <span class="white-text info-label">First name:</span>
+                    <span class="white-text thin-writing info-data"
+                      >{{user.first_name}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Second Name:</span>
-                        <span class="white-text thin-writing info-data">{{user.last_name}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.last_name}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Age:</span>
-                        <span class="white-text thin-writing info-data">{{user.player.age}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.age}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Country:</span>
-                        <span class="white-text thin-writing info-data">{{user.player.country}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.country}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Favourite slot:</span>
-                        <span class="white-text thin-writing info-data">{{user.player.favorite_slot}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.favorite_slot}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Hotel room:</span>
-                        <span class="white-text thin-writing info-data">{{user.player.hotel_room}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.hotel_room}}</span
                     >
                   </div>
                 </div>
@@ -246,7 +258,8 @@
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Has an insurance</span>
-                        <span class="white-text thin-writing info-data">{{user.player.insurance}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.insurance}}</span
                     >
                   </div>
                 </div>
@@ -263,21 +276,24 @@
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Senior:</span>
-                        <span class="white-text thin-writing info-data">{{user.player.is_senior}}</span
+                    <span class="white-text thin-writing info-data"
+                      >{{user.player.is_senior}}</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Total lost:</span>
-                        <span class="thin-writing info-data red-dark-text">{{user.player.lost}}$</span
+                    <span class="thin-writing info-data red-dark-text"
+                      >{{user.player.lost}}$</span
                     >
                   </div>
                 </div>
                 <div class="col s12 m6 x2">
                   <div class="info-block">
                     <span class="white-text info-label">Total won:</span>
-                        <span class="thin-writing info-data green-dark-text">{{user.player.win}}$</span
+                    <span class="thin-writing info-data green-dark-text"
+                      >{{user.player.win}}$</span
                     >
                   </div>
                 </div>
@@ -296,20 +312,19 @@
     <div class="white-text footer center-align">
       <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
       <a href="#" class="white-text">Instagram</a><br />
-                <a href="#" class="white-text">Facebook</a><br />
-                <a href="#" class="white-text">LinkedIN</a><br />
-                <p class="signature cursive-text">
-                    Made specially for web-technologies course by Lee Alexander.
-                </p>
-            </div>
-            <script src="{% static 'js/materialize.js' %}"></script>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var elems = document.querySelectorAll(".sidenav");
-                    var options = {};
-                    var instances = M.Sidenav.init(elems, options);
-                });
-            </script>
-</body>
-
+      <a href="#" class="white-text">Facebook</a><br />
+      <a href="#" class="white-text">LinkedIN</a><br />
+      <p class="signature cursive-text">
+        Made specially for web-technologies course by Lee Alexander.
+      </p>
+    </div>
+    <script src="{% static 'js/materialize.js' %}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var options = {};
+        var instances = M.Sidenav.init(elems, options);
+      });
+    </script>
+  </body>
 </html>

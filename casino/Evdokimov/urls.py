@@ -17,6 +17,7 @@ urlpatterns = [
     path('schedule', views.schedule),
     path('logout', views.logging_out),
     path('addPlayerImage', views.addPlayerImage),
+    path('payment', views.payment),
 ]
 
 urlpatterns += api_urlpatterns
