@@ -66,82 +66,90 @@
 
 <div id="slide-out" class="sidenav sidenav-bckgd">
   <div class="user-info white-text">
-    {% if user.is_authenticated %}
-    <div class="user-avatar">
-      <div class="inner-canvas">
-        <h4 class="user-name">{{user.first_name}} {{user.last_name}}</h4>
-        <span class="white-text">Country: {{user.player.country}}</span>
-        <br />
-        <span class="white-text">Age: {{user.player.age}}</span>
-      </div>
-    </div>
-    {% else %}
-    <div class="user-avatar">
-      <div class="inner-canvas">
-        <h4 class="user-name">Guest</h4>
-        <span class="white-text">Country: Unknown</span> <br />
-        <span class="white-text">Age: Unknown</span>
-      </div>
-    </div>
-    {% endif %}
-    <div class="additional-navbar-functionality container">
-      {% if user.is_authenticated %}
-      <h5 class="white-text">Balance: {{user.player.balance}}$</h5>
+    {% if user.is_authenticated %} {% if user.player.avatar %}
+    <div
+      class="user-avatar"
+      style="background-image:
+    url({{user.player.avatar.url}})"
+    >
       {% else %}
-      <h5 class="white-text">Balance: 0$</h5>
+      <div class="user-avatar">
+        {% endif %}
+        <div class="inner-canvas">
+          <h4 class="user-name">{{user.first_name}} {{user.last_name}}</h4>
+          <span class="white-text">Country: {{user.player.country}}</span>
+          <br />
+          <span class="white-text">Age: {{user.player.age}}</span>
+        </div>
+      </div>
+      {% else %}
+      <div class="user-avatar">
+        <div class="inner-canvas">
+          <h4 class="user-name">Guest</h4>
+          <span class="white-text">Country: Unknown</span> <br />
+          <span class="white-text">Age: Unknown</span>
+        </div>
+      </div>
       {% endif %}
-      <a href="payment" class="white-text">
-        <h6 class="cursive-text"><u>Withdraw</u></h6>
-      </a>
-      <hr />
-      <a href="games" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">games</i>Games</a
+      <div class="additional-navbar-functionality container">
+        {% if user.is_authenticated %}
+        <h5 class="white-text">Balance: {{user.player.balance}}$</h5>
+        {% else %}
+        <h5 class="white-text">Balance: 0$</h5>
+        {% endif %}
+        <a href="payment" class="white-text">
+          <h6 class="cursive-text"><u>Withdraw</u></h6>
+        </a>
+        <hr />
+        <a href="games" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">games</i>Games</a
+        >
+        <a href="profile" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">account_circle</i>Personal
+          cabinet</a
+        >
+        <a href="#" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">settings</i>Settings</a
+        >
+        <hr />
+        <a href="#" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">priority_high</i>Rules &
+          conditions</a
+        >
+        <a href="#" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">perm_identity</i
+          >Administration</a
+        >
+        <a href="FAQ" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">book</i>FAQ</a
+        >
+        <a href="#" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">help</i>Help and guidance</a
+        >
+        <a href="schedule" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">pool</i>Sharks shedule</a
+        >
+        <a href="feedbacks" class="white-text navbar-buttons"
+          ><i class="material-icons inline-icon">feedback</i>Feedbacks</a
+        >
+      </div>
+      {% if user.is_authenticated %}
+      <a
+        href="logout"
+        class="custom-btn sidenav-account-btn sidenav-account-btn-left"
+        >Log out from your account</a
       >
-      <a href="profile" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">account_circle</i>Personal
-        cabinet</a
+      {% else %}
+      <a
+        href="login"
+        class="custom-btn sidenav-account-btn sidenav-account-btn-left"
+        >Sign In</a
       >
-      <a href="#" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">settings</i>Settings</a
-      >
-      <hr />
-      <a href="#" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">priority_high</i>Rules &
-        conditions</a
-      >
-      <a href="#" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">perm_identity</i
-        >Administration</a
-      >
-      <a href="FAQ" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">book</i>FAQ</a
-      >
-      <a href="#" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">help</i>Help and guidance</a
-      >
-      <a href="schedule" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">pool</i>Sharks shedule</a
-      >
-      <a href="feedbacks" class="white-text navbar-buttons"
-        ><i class="material-icons inline-icon">feedback</i>Feedbacks</a
-      >
+      <a
+        href="registration"
+        class="custom-btn sidenav-account-btn sidenav-account-btn-right"
+        >Register</a
+      >{% endif %}
     </div>
-    {% if user.is_authenticated %}
-    <a
-      href="logout"
-      class="custom-btn sidenav-account-btn sidenav-account-btn-left"
-      >Log out from your account</a
-    >
-    {% else %}
-    <a
-      href="login"
-      class="custom-btn sidenav-account-btn sidenav-account-btn-left"
-      >Sign In</a
-    >
-    <a
-      href="registration"
-      class="custom-btn sidenav-account-btn sidenav-account-btn-right"
-      >Register</a
-    >{% endif %}
   </div>
 </div>
