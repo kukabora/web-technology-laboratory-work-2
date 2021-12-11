@@ -27,3 +27,17 @@ class Player(models.Model):
 
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} #{self.user.id}"
+
+
+class Feedback(models.Model):
+    owner = models.ForeignKey(
+        User, related_name="feedback", on_delete=models.CASCADE)
+    text = models.CharField(max_length=999, name="text", null=False)
+    rating = models.IntegerField(max_length=1, default=5)
+
+    class Meta:
+        verbose_name = 'Feedback'
+        verbose_name_plural = 'Feedbacks'
+
+    def __str__(self):
+        return f"{self.owner.first_name} {self.owner.last_name}'s feedback"

@@ -295,13 +295,8 @@
     <script src="{% static 'js/materialize.js' %}"></script>
     <script src="{% static 'js/wheelgame.js' %}"></script>
     <script src="{% static 'js/slotgame.js' %}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var options = {};
-            var instances = M.Modal.init(elems, options);
-        });
-    </script>
+    <script src="{% static 'js/modal.js' %}"></script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var elems = document.querySelectorAll(".sidenav");
