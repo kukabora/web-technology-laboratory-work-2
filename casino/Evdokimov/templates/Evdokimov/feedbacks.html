@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-
+{% load feedback_extras %}
 <html lang="en">
 
 <head>
@@ -18,12 +18,14 @@
   {% include "Evdokimov/navbar.html" %}
     <div class="background">
         <div class="inner-canvas" style="padding-bottom: 5%; padding-top: 5%;">
+            {% if feedbacks %}
             <h3 class="white-text cursive-text center-align feedbacks-header">If you want, you can also check feedbacks about our casino and resort</h3>
             <div class="row">
+                {% for feedback in feedbacks %}
                 <div class="col s12 feedback-wrapper">
                     
                     
-
+                    
                     <div class="feedback-card">
                         <div class="row info-wrapper white-text">
                             <div class="col s12 m3 center-align">
@@ -32,28 +34,31 @@
                             <div class="col s12 m9">
                                 <div class="row">
                                     <div class="col s12 m4 center-align">
-                                        <span class="cursive-text feedback-header">Guest | 99</span>
+                                        <span class="cursive-text feedback-header">{{feedback.owner.first_name}} {{feedback.owner.last_name}} | {{feedback.owner.id}}</span>
                                     </div>
                                     <div class="col s12 m4 rating center-align">
+                                        {% for star in feedback.rating|times %}
                                         <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating ">
-                                        <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating ">
+                                        {% endfor %}
+                                        {% for star in feedback.rating|timesMinusFive %}
                                         <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating unactive-rating">
-                                        <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating unactive-rating">
-                                        <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating unactive-rating">
+                                        {% endfor %}
                                     </div>
-                                    <div class="col s12 center-align">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusamus nulla, perspiciatis consectetur impedit esse error nam facere iste rerum libero, cum nisi natus vero ratione enim fugit ad dignissimos nemo! Asperiores, repellat accusantium, tempora
-                                        sequi voluptatum aliquid ea amet saepe maiores libero laudantium. Velit enim tenetur provident consequatur atque.
+                                    <div class="col s12 center-align">{{feedback.text}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-
+                    </div>    
+                    
                     
                 </div>
+                {% endfor %}
             </div>
+            {% else %}
+            <h1 class="white-text">Oops! Seems like we have not feedbacks yet.<h1>
+            {% endif %}
+            
         </div>
 
         {% include "Evdokimov/footer.html" %}

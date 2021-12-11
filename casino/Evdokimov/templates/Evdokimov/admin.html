@@ -33,6 +33,7 @@
       <div class="inner-canvas" style="padding: 2% 3% 2% 3%; min-height: 750px">
         <h4 class="white-text">What are we going to do?</h4>
         <div class="row">
+          {% if users %}
           <div class="col s12 m6 l4">
             <ul
               class="collapsible"
@@ -49,7 +50,7 @@
                     center-align
                   "
                 >
-                  {% if users %} Users
+                  Users
                 </div>
                 <div class="collapsible-body black-text thin-writing">
                   <div class="list-of-items">
@@ -74,11 +75,10 @@
                     </div>
                   </div>
                 </div>
-                {% endif %}
               </li>
             </ul>
           </div>
-
+          {% endif %} {% if feedbacks %}
           <div class="col s12 m6 l4">
             <ul
               class="collapsible"
@@ -95,7 +95,7 @@
                     center-align
                   "
                 >
-                  Limited offers
+                  Feedbacks
                 </div>
                 <div class="collapsible-body black-text thin-writing">
                   <div class="list-of-items">
@@ -146,6 +146,7 @@
               </li>
             </ul>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
