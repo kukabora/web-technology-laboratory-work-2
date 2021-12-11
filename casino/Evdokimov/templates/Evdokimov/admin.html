@@ -99,8 +99,9 @@
                 </div>
                 <div class="collapsible-body black-text thin-writing">
                   <div class="list-of-items">
+                    {% for feedback in feedbacks %}
                     <div class="item">
-                      Russian Roulette
+                      {{feedback}}
                       <a href="#" class="custom-btn-red right black-text"
                         >Delete</a
                       >
@@ -112,32 +113,7 @@
                       >
                     </div>
                     <hr />
-                    <div class="item">
-                      Pool party
-                      <a href="#" class="custom-btn-red right black-text"
-                        >Delete</a
-                      >
-                      <a href="#" class="custom-btn-green right black-text"
-                        >Update</a
-                      >
-                      <a href="#" class="custom-btn-blue right black-text"
-                        >Info</a
-                      >
-                    </div>
-                    <hr />
-                    <div class="item">
-                      Live music
-                      <a href="#" class="custom-btn-red right black-text"
-                        >Delete</a
-                      >
-                      <a href="#" class="custom-btn-green right black-text"
-                        >Update</a
-                      >
-                      <a href="#" class="custom-btn-blue right black-text"
-                        >Info</a
-                      >
-                    </div>
-                    <hr />
+                    {% endfor %}
                     <div class="center-align">
                       <a href="" class="custom-btn black-text">Create one</a>
                     </div>

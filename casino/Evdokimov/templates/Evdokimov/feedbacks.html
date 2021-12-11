@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 {% load static %}
 {% load feedback_extras %}
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
@@ -12,9 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Work #2</title>
 </head>
-
 <body>
-
   {% include "Evdokimov/navbar.html" %}
     <div class="background">
         <div class="inner-canvas" style="padding-bottom: 5%; padding-top: 5%;">
@@ -23,9 +20,6 @@
             <div class="row">
                 {% for feedback in feedbacks %}
                 <div class="col s12 feedback-wrapper">
-                    
-                    
-                    
                     <div class="feedback-card">
                         <div class="row info-wrapper white-text">
                             <div class="col s12 m3 center-align">
@@ -49,18 +43,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>    
-                    
-                    
+                    </div>
                 </div>
                 {% endfor %}
             </div>
             {% else %}
             <h1 class="white-text">Oops! Seems like we have not feedbacks yet.<h1>
             {% endif %}
-            
         </div>
-
         {% include "Evdokimov/footer.html" %}
         <script src="{% static 'js/materialize.js' %}"></script>
         <script>
@@ -70,7 +60,5 @@
                 var instances = M.Sidenav.init(elems, options);
             });
         </script>
-
 </body>
-
 </html>
