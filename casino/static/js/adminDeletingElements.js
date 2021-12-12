@@ -288,8 +288,6 @@ function userCreationRequestSendingBtnFunc(e) {
             >
           </div>
           <hr />` + listOfUsers.innerHTML
-                // var newUserItem = document.createElement("div")
-                // newUserItem.classList.add("item")
 
         })
         .catch(error => console.log('error', error));
