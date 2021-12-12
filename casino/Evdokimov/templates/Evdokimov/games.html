@@ -291,25 +291,12 @@
     </div>
     <script src="{% static 'js/randomBackground.js' %}"></script>
 
-    <div class="white-text footer center-align">
-        <h3 class="cursive-text footer-header">Follow us on social medias:</h3>
-        <a href="#" class="white-text">Instagram</a><br />
-        <a href="#" class="white-text">Facebook</a><br />
-        <a href="#" class="white-text">LinkedIN</a><br />
-        <p class="signature cursive-text">
-            Made specially for web-technologies course by Lee Alexander.
-        </p>
-    </div>
+    {% include "Evdokimov/footer.html" %}
     <script src="{% static 'js/materialize.js' %}"></script>
     <script src="{% static 'js/wheelgame.js' %}"></script>
     <script src="{% static 'js/slotgame.js' %}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var options = {};
-            var instances = M.Modal.init(elems, options);
-        });
-    </script>
+    <script src="{% static 'js/modal.js' %}"></script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var elems = document.querySelectorAll(".sidenav");

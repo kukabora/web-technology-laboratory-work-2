@@ -12,7 +12,9 @@ def faq(request):
 
 
 def feedbacks(request):
-    return render(request, 'Evdokimov/feedbacks.html')
+    context = {}
+    context['feedbacks'] = Feedback.objects.all()
+    return render(request, 'Evdokimov/feedbacks.html', context)
 
 
 def games(request):
@@ -103,3 +105,13 @@ def schedule(request):
 
 def index(request):
     return render(request, 'Evdokimov/index.html')
+
+
+def admin(request):
+    context = {}
+    if (not request.user.is_staff):
+        context['msg'] = "You have no rights to access this resource!"
+    else:
+        context['users'] = User.objects.all()
+        context['feedbacks'] = Feedback.objects.all()
+    return render(request, 'Evdokimov/admin.html', context)
