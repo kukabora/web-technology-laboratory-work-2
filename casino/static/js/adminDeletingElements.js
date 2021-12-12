@@ -21,7 +21,6 @@ userDeletingBtns.forEach(btn => {
             redirect: 'follow'
         };
 
-
         fetch("http://127.0.0.1:8000/api/deleteUser", requestOptions)
             .then(response => response.json())
             .then(result => {
@@ -39,17 +38,14 @@ function saveUpdatedDataFunc(e) {
     var modal = document.querySelector("#user-details")
     var newData = {}
     var info_fields = document.querySelectorAll(".user-info-field")
-
     info_fields.forEach(field => {
         newData[field.classList[field.classList.length - 1]] = field.value
     })
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let token = getCookie("csrftoken")
-    var myHeaders = new Headers();
     myHeaders.append("Cookie", "csrftoken=" + token);
-
-
+    myHeaders.append('X-CSRFToken', token);
     var raw = JSON.stringify(newData);
 
     var requestOptions = {
@@ -60,9 +56,22 @@ function saveUpdatedDataFunc(e) {
     };
 
     fetch("http://127.0.0.1:8000/api/updateUser", requestOptions)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(result => M.toast({ html: '<h5>' + result.msg + '<h5>' }))
         .catch(error => console.log('error', error));
+
+    modal.querySelectorAll(".user-info-field").forEach(field => {
+        field.disabled = true
+    })
+    modal.querySelector(".update-cancelling-btn").remove()
+    modal.querySelector(".save-updating-btn").remove()
+    var newUpdateBtn = document.createElement("button")
+    newUpdateBtn.classList.add("green", "btn", "white-text", "update-allowing-btn")
+    newUpdateBtn.innerHTML = "UPDATE"
+    newUpdateBtn.onclick = e => {
+        updateAllowingBtnFunc(e)
+    }
+    modal.lastElementChild.lastElementChild.appendChild(newUpdateBtn)
 
 }
 
