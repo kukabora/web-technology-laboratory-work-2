@@ -38,9 +38,22 @@ userDeletingBtns.forEach(btn => {
     }
 })
 
-var userDetailsBtn = document.querySelectorAll(".user-details-btn")
-userDetailsBtn.forEach(btn => {
-    btn.onclick = (e) => {
+var updateAllowingBtn = document.querySelector(".update-allowing-btn")
+updateAllowingBtn.onclick = e => {
+    var modal = document.querySelector("#user-details")
+    modal.querySelectorAll(".user-info-field").forEach(field => {
+        field.disabled = false
+    })
+}
+
+
+var userUpdateBtns = document.querySelectorAll(".user-update-btn")
+userUpdateBtns.forEach(btn => {
+    btn.onclick = e => {
+        var modal = document.querySelector("#user-details")
+        modal.querySelectorAll(".user-info-field").forEach(field => {
+            field.disabled = false
+        })
         let token = getCookie("csrftoken")
         var myHeaders = new Headers();
         myHeaders.append("Cookie", "csrftoken=" + token);
@@ -61,21 +74,59 @@ userDetailsBtn.forEach(btn => {
             .then(response => response.json())
             .then(result => {
                 result = JSON.parse(result)
-                console.log(result)
-                var modal = document.querySelector("#user-details")
                 Object.keys(result[0]['fields']).forEach(key => {
                     try {
                         modal.querySelector("." + key).value = result[0]['fields'][key]
                     } catch (error) {
-                        console.log(error)
+
                     }
                 });
                 Object.keys(result[1]['fields']).forEach(key => {
                     try {
                         modal.querySelector("." + key).value = result[1]['fields'][key]
-                    } catch (error) {
-                        console.log(error)
-                    }
+                    } catch (error) {}
+                });
+            })
+            .catch(error => console.log('error', error));
+    }
+})
+
+var userDetailsBtn = document.querySelectorAll(".user-details-btn")
+userDetailsBtn.forEach(btn => {
+    btn.onclick = (e) => {
+        var modal = document.querySelector("#user-details")
+        modal.querySelectorAll(".user-info-field").forEach(field => {
+            field.disabled = true
+        })
+        let token = getCookie("csrftoken")
+        var myHeaders = new Headers();
+        myHeaders.append("Cookie", "csrftoken=" + token);
+
+        var formdata = new FormData();
+        formdata.append("csrfmiddlewaretoken", token);
+        formdata.append("user_id", e.target.parentNode.getAttribute("user_id"));
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow'
+        };
+
+
+        fetch("http://127.0.0.1:8000/api/getUserById", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                result = JSON.parse(result)
+                Object.keys(result[0]['fields']).forEach(key => {
+                    try {
+                        modal.querySelector("." + key).value = result[0]['fields'][key]
+                    } catch (error) {}
+                });
+                Object.keys(result[1]['fields']).forEach(key => {
+                    try {
+                        modal.querySelector("." + key).value = result[1]['fields'][key]
+                    } catch (error) {}
                 });
             })
             .catch(error => console.log('error', error));
