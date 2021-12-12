@@ -1,7 +1,32 @@
+import json
 from django.http import JsonResponse
 from django.core import serializers
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
+
+
+def updateUser(request):
+    respData = {}
+    if request.method == "POST":
+        newUserData = json.loads(request.body)
+        user = User.objects.get(username=newUserData['username'])
+        user.first_name = newUserData['first_name']
+        user.last_name = newUserData['last_name']
+        user.password = newUserData['password']
+        user.player.age = newUserData['age']
+        user.player.is_senior = bool(newUserData['is_senior'])
+        user.player.balance = newUserData['balance']
+        user.date_joined = newUserData['date_joined']
+        user.player.with_amount = newUserData['with_amount']
+        user.player.hotel_room = newUserData['hotel_room']
+        user.player.username = newUserData['username']
+        user.player.insurance = bool(newUserData['insurance'])
+        user.player.save()
+        user.save()
+        respData['msg'] = "OK"
+    else:
+        respData['msg'] = "Oops! Something went wrong!"
+    return JsonResponse(respData, safe=False)
 
 
 def getUserDataById(request):

@@ -6,6 +6,7 @@ api_urlpatterns = [
     path("api/updateBalance", api.updateBalance),
     path("api/deleteUser", api.deleteUser),
     path("api/getUserById", api.getUserDataById),
+    path("api/updateUser", api.updateUser),
 ]
 
 urlpatterns = [

@@ -1,11 +1,3 @@
-// var deleteBtns = document.querySelectorAll(".custom-btn-red");
-// deleteBtns.forEach(element => element.onclick = (e) => {
-//     let parentBlock = e.target.parentNode;
-//     let underline = parentBlock.nextElementSibling;
-//     parentBlock.remove();
-//     underline.remove();
-// });
-
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -21,7 +13,6 @@ userDeletingBtns.forEach(btn => {
 
         var formdata = new FormData();
         formdata.append("csrfmiddlewaretoken", token);
-        formdata.append("user_id", e.target.parentNode("user_id"));
 
         var requestOptions = {
             method: 'POST',
@@ -33,24 +24,118 @@ userDeletingBtns.forEach(btn => {
 
         fetch("http://127.0.0.1:8000/api/deleteUser", requestOptions)
             .then(response => response.json())
-            .then(result => M.toast({ html: '<h5>' + result.msg + '<h5>' }))
+            .then(result => {
+                M.toast({ html: '<h5>' + result.msg + '<h5>' })
+                let parentBlock = e.target.parentNode;
+                let underline = parentBlock.nextElementSibling;
+                parentBlock.remove();
+                underline.remove();
+            })
             .catch(error => console.log('error', error));
     }
 })
 
-var updateAllowingBtn = document.querySelector(".update-allowing-btn")
-updateAllowingBtn.onclick = e => {
+function saveUpdatedDataFunc(e) {
+    var modal = document.querySelector("#user-details")
+    var newData = {}
+    var info_fields = document.querySelectorAll(".user-info-field")
+
+    info_fields.forEach(field => {
+        newData[field.classList[field.classList.length - 1]] = field.value
+    })
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    let token = getCookie("csrftoken")
+    var myHeaders = new Headers();
+    myHeaders.append("Cookie", "csrftoken=" + token);
+
+
+    var raw = JSON.stringify(newData);
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("http://127.0.0.1:8000/api/updateUser", requestOptions)
+        .then(response => response.text())
+        .then(result => M.toast({ html: '<h5>' + result.msg + '<h5>' }))
+        .catch(error => console.log('error', error));
+
+}
+
+function cancelUpdatingFunc(e) {
+    var modal = document.querySelector("#user-details")
+    modal.querySelectorAll(".user-info-field").forEach(field => {
+        field.disabled = true
+    })
+    modal.querySelector(".update-cancelling-btn").remove()
+    modal.querySelector(".save-updating-btn").remove()
+    var newUpdateBtn = document.createElement("button")
+    newUpdateBtn.classList.add("green", "btn", "white-text", "update-allowing-btn")
+    newUpdateBtn.innerHTML = "UPDATE"
+    newUpdateBtn.onclick = e => {
+        updateAllowingBtnFunc(e)
+    }
+    modal.lastElementChild.lastElementChild.appendChild(newUpdateBtn)
+
+}
+
+function updateAllowingBtnFunc(e) {
     var modal = document.querySelector("#user-details")
     modal.querySelectorAll(".user-info-field").forEach(field => {
         field.disabled = false
     })
+    var newCancelBtn = document.createElement("button")
+    newCancelBtn.classList.add('red', "btn", "white-text", "update-cancelling-btn")
+    newCancelBtn.innerHTML = "CANCEL"
+    newCancelBtn.onclick = e => {
+        cancelUpdatingFunc(e)
+    }
+    modal.lastElementChild.lastElementChild.appendChild(newCancelBtn)
+    var newSaveBtn = document.createElement("button")
+    newSaveBtn.classList.add("blue", "btn", "white-text", "save-updating-btn")
+    newSaveBtn.innerHTML = "SAVE"
+    newSaveBtn.onclick = e => {
+        saveUpdatedDataFunc(e)
+    }
+    modal.lastElementChild.lastElementChild.appendChild(newSaveBtn)
+    e.target.remove()
 }
+
+var updateAllowingBtn = document.querySelector(".update-allowing-btn")
+updateAllowingBtn.onclick = e => { updateAllowingBtnFunc(e) }
 
 
 var userUpdateBtns = document.querySelectorAll(".user-update-btn")
 userUpdateBtns.forEach(btn => {
     btn.onclick = e => {
         var modal = document.querySelector("#user-details")
+        var newCancelBtn = document.createElement("button")
+        newCancelBtn.classList.add('red', "btn", "white-text", "update-cancelling-btn")
+        newCancelBtn.innerHTML = "CANCEL"
+        newCancelBtn.onclick = e => {
+            cancelUpdatingFunc(e)
+        }
+        if (!modal.querySelector(".update-cancelling-btn")) {
+            modal.lastElementChild.lastElementChild.appendChild(newCancelBtn)
+        }
+        var newSaveBtn = document.createElement("button")
+        newSaveBtn.classList.add("blue", "btn", "white-text", "save-updating-btn")
+        newSaveBtn.innerHTML = "SAVE"
+        newSaveBtn.onclick = e => {
+            saveUpdatedDataFunc(e)
+        }
+        if (!modal.querySelector(".save-updating-btn"))
+            modal.lastElementChild.lastElementChild.appendChild(newSaveBtn)
+        try {
+            modal.querySelector(".update-allowing-btn").remove()
+
+        } catch (error) {
+
+        }
         modal.querySelectorAll(".user-info-field").forEach(field => {
             field.disabled = false
         })
@@ -98,6 +183,22 @@ userDetailsBtn.forEach(btn => {
         modal.querySelectorAll(".user-info-field").forEach(field => {
             field.disabled = true
         })
+        if (!document.querySelector(".update-allowing-btn")) {
+            var newUpdateBtn = document.createElement("button")
+            newUpdateBtn.classList.add("green", "btn", "white-text", "update-allowing-btn")
+            newUpdateBtn.innerHTML = "UPDATE"
+            newUpdateBtn.onclick = e => {
+                updateAllowingBtnFunc(e)
+            }
+            modal.lastElementChild.lastElementChild.appendChild(newUpdateBtn)
+        }
+        try {
+
+            modal.querySelector(".update-cancelling-btn").remove()
+            modal.querySelector(".save-updating-btn").remove()
+        } catch (error) {
+
+        }
         let token = getCookie("csrftoken")
         var myHeaders = new Headers();
         myHeaders.append("Cookie", "csrftoken=" + token);
