@@ -1,6 +1,23 @@
 from django.http import JsonResponse
+from django.core import serializers
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
+
+
+def getUserDataById(request):
+    user = User.objects.get(id=request.POST['user_id'])
+    serialized_obj = serializers.serialize('json', [user, user.player])
+    return JsonResponse(serialized_obj, safe=False)
+
+
+def deleteUser(request):
+    user = User.objects.get(id=request.POST['user_id'])
+    user.player.delete()
+    user.delete()
+    data = {
+        "msg": "User has been succesfully deleted"
+    }
+    return JsonResponse(data=data, safe=False)
 
 
 def updateBalance(request):

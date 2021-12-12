@@ -4,6 +4,8 @@ from . import api
 
 api_urlpatterns = [
     path("api/updateBalance", api.updateBalance),
+    path("api/deleteUser", api.deleteUser),
+    path("api/getUserById", api.getUserDataById),
 ]
 
 urlpatterns = [
@@ -18,7 +20,7 @@ urlpatterns = [
     path('logout', views.logging_out),
     path('addPlayerImage', views.addPlayerImage),
     path('payment', views.payment),
-    path('admin', views.admin),
+    path('admin/', views.admin),
 ]
 
 urlpatterns += api_urlpatterns
