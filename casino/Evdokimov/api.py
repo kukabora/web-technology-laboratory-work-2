@@ -5,6 +5,39 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 
 
+def createUser(request):
+    respData = {}
+    if request.method == "POST":
+        newUserData = json.loads(request.body)
+        user = User.objects.create_user(
+            first_name=newUserData['first_name'],
+            last_name=newUserData['last_name'],
+            password=newUserData['password'],
+            username=newUserData['username']
+        )
+        player = Player()
+        player.user = user
+        player.age = newUserData['age']
+        player.is_senior = True if newUserData['is_senior'].lower(
+        ) == 'true' else False
+        player.country = newUserData['country']
+        player.balance = newUserData['balance']
+        player.with_amount = newUserData['with_amount']
+        player.hotel_room = newUserData['hotel_room']
+        player.win = 0
+        player.lost = 0
+        player.insurance = True if newUserData['insurance'].lower(
+        ) == 'true' else False
+        player.save()
+        respData['msg'] = "User has been successfully created!"
+        respData['userInfo'] = str(
+            user.first_name) + " " + str(user.last_name) + " (" + str(user.id) + ")"
+        respData['userId'] = str(user.id)
+    else:
+        respData['msg'] = "Oops! Something went wrong!"
+    return JsonResponse(respData, safe=False)
+
+
 def updateUser(request):
     respData = {}
     if request.method == "POST":

@@ -7,6 +7,7 @@ api_urlpatterns = [
     path("api/deleteUser", api.deleteUser),
     path("api/getUserById", api.getUserDataById),
     path("api/updateUser", api.updateUser),
+    path("api/createUser", api.createUser),
 ]
 
 urlpatterns = [
