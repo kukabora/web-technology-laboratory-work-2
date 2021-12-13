@@ -1,7 +1,7 @@
-{% load static %}
-{% load feedback_extras %}
+{% load static %} {% load feedback_extras %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
@@ -11,8 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab Work #2</title>
 </head>
+
 <body>
-  {% include "Evdokimov/navbar.html" %}
+    {% include "Evdokimov/navbar.html" %}
     <div class="background">
         <div class="inner-canvas" style="padding-bottom: 5%; padding-top: 5%;">
             {% if feedbacks %}
@@ -20,36 +21,39 @@
             <div class="row">
                 {% for feedback in feedbacks %}
                 <div class="col s12 feedback-wrapper">
-                    <div class="feedback-card">
-                        <div class="row info-wrapper white-text">
-                            <div class="col s12 m3 center-align">
-                                <img src="{% static 'img/guest-user.jpg' %}" alt="" class="feedback-user-photo">
-                            </div>
-                            <div class="col s12 m9">
-                                <div class="row">
-                                    <div class="col s12 m4 center-align">
-                                        <span class="cursive-text feedback-header">{{feedback.owner.first_name}} {{feedback.owner.last_name}} | {{feedback.owner.id}}</span>
-                                    </div>
-                                    <div class="col s12 m4 rating center-align">
-                                        {% for star in feedback.rating|times %}
-                                        <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating ">
-                                        {% endfor %}
-                                        {% for star in feedback.rating|timesMinusFive %}
-                                        <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating unactive-rating">
-                                        {% endfor %}
-                                    </div>
-                                    <div class="col s12 center-align">{{feedback.text}}
+                    <a href="profile?user_id={{feedback.owner.id}}">
+
+                        <div class="feedback-card">
+                            <div class="row info-wrapper white-text">
+                                <div class="col s12 m3 center-align">
+                                    {% if feedback.owner.player.avatar %}
+                                    <img src="{{feedback.owner.player.avatar.url}}" alt="" class="feedback-user-photo"> {% else %}
+                                    <img src="{% static 'img/guest-user.jpg' %}" alt="" class="feedback-user-photo"> {% endif %}
+                                </div>
+                                <div class="col s12 m9">
+                                    <div class="row">
+                                        <div class="col s12 m4 center-align">
+                                            <span class="cursive-text feedback-header">{{feedback.owner.first_name}} {{feedback.owner.last_name}} | {{feedback.owner.id}}</span>
+                                        </div>
+                                        <div class="col s12 m4 rating center-align">
+                                            {% for star in feedback.rating|times %}
+                                            <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating "> {% endfor %} {% for star in feedback.rating|timesMinusFive %}
+                                            <img src="{% static 'img/star-rating.png' %}" alt="" srcset="" class="star-rating unactive-rating"> {% endfor %}
+                                        </div>
+                                        <div class="col s12 center-align">{{feedback.text}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </a>
                     </div>
                 </div>
                 {% endfor %}
             </div>
             {% else %}
-            <h1 class="white-text">Oops! Seems like we have not feedbacks yet.<h1>
-            {% endif %}
+            <h1 class="white-text">Oops! Seems like we have not feedbacks yet.
+                <h1>
+                    {% endif %}
         </div>
         {% include "Evdokimov/footer.html" %}
         <script src="{% static 'js/materialize.js' %}"></script>
@@ -61,4 +65,5 @@
             });
         </script>
 </body>
+
 </html>
