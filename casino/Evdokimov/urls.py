@@ -23,6 +23,7 @@ urlpatterns = [
     path('addPlayerImage', views.addPlayerImage),
     path('payment', views.payment),
     path('admin/', views.admin),
+    path('location', views.location)
 ]
 
 urlpatterns += api_urlpatterns

@@ -103,6 +103,10 @@ def schedule(request):
     return render(request, 'Evdokimov/schedule.html')
 
 
+def location(request):
+    return render(request, 'Evdokimov/location.html')
+
+
 def index(request):
     return render(request, 'Evdokimov/index.html')
 
