@@ -66,7 +66,17 @@ def logging_in(request):
 
 
 def profile(request):
-    return render(request, 'Evdokimov/profile.html')
+    context = {
+        "msg": "",
+        "user1": None
+    }
+    if request.user.is_authenticated and not "user_id" in request.GET:
+        context['user1'] = User.objects.get(id=request.user.id)
+    elif "user_id" in request.GET:
+        context['user1'] = User.objects.get(id=request.GET['user_id'])
+    else:
+        context['msg'] = "You are not authenticated and have not selected user to show!"
+    return render(request, 'Evdokimov/profile.html', context)
 
 
 def registration(request):
