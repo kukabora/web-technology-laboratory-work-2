@@ -35,6 +35,7 @@ userDeletingBtns.forEach(btn => {
     }
 })
 
+
 function saveUpdatedDataFunc(e) {
     var modal = document.querySelector("#user-details")
     var newData = {}
