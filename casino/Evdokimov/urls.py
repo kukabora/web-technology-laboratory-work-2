@@ -12,18 +12,18 @@ api_urlpatterns = [
 
 urlpatterns = [
     path('', views.index, name="main"),
-    path('FAQ', views.faq),
-    path('feedbacks', views.feedbacks),
-    path('games', views.games),
-    path('login', views.logging_in),
+    path('FAQ', views.faq, name="faq"),
+    path('feedbacks', views.feedbacks, name="feedbacks"),
+    path('games', views.games, name="games"),
+    path('login', views.logging_in, name="login"),
     path('profile', views.profile, name="profile"),
-    path('registration', views.registration),
-    path('schedule', views.schedule),
-    path('logout', views.logging_out),
+    path('registration', views.registration, name="registration"),
+    path('schedule', views.schedule, name="schedule"),
+    path('logout', views.logging_out, name="logout"),
     path('addPlayerImage', views.addPlayerImage),
-    path('payment', views.payment),
-    path('admin/', views.admin),
-    path('location', views.location)
+    path('payment', views.payment, name="payment"),
+    path('admin/', views.admin, name="admin"),
+    path('location', views.location, name="location")
 ]
 
 urlpatterns += api_urlpatterns
