@@ -9,7 +9,7 @@
 }
 
 .feedback-card {
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: var(--dark-grey);
 }
 
 .info-wrapper {

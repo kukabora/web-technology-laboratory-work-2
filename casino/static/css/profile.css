@@ -1,5 +1,5 @@
 .main-info {
-    background-color: rgba(27, 27, 27, 0.95);
+    background-color: var(--dark-grey);
     padding: 1%;
 }
 

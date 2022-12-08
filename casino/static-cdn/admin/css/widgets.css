@@ -389,7 +389,7 @@ span.clearable-file-input label {
     margin: 0;
     padding: 0;
     border-collapse: collapse;
-    background: white;
+    background: var(--white)
     width: 100%;
 }
 
@@ -446,12 +446,12 @@ span.clearable-file-input label {
 .calendar td a:focus, .timelist a:focus,
 .calendar td a:hover, .timelist a:hover {
     background: var(--primary);
-    color: white;
+    color: var(--white)
 }
 
 .calendar td a:active, .timelist a:active {
     background: var(--header-bg);
-    color: white;
+    color: var(--white)
 }
 
 .calendarnav {
@@ -520,7 +520,7 @@ span.clearable-file-input label {
 }
 
 .calendar-cancel a {
-    color: black;
+    color: var(--black)
     display: block;
 }
 

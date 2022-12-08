@@ -3,7 +3,7 @@
 }
 
 .game-card {
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: var(--dark-grey);
 }
 
 .card-background {
@@ -11,7 +11,7 @@
 }
 
 .card-info-container {
-    background-color: rgba(27, 27, 27, 0.7);
+    background-color: var(--dark-grey);
     padding: 5%;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .custom-input {
-    color: white;
+    color: var(--white)
 }
 
 .bet-field {

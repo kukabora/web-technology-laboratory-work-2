@@ -5,27 +5,27 @@
 }
 
 .main-faq-info {
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: var(--dark-grey);
     border: none !important;
     padding-top: 0.5%;
 }
 
 .element-header {
-    color: white;
+    color: var(--white)
     font-weight: 700;
     font-size: calc(0.8vw + 0.8em);
     transition: 0.4s;
 }
 
 .element-header:hover {
-    color: black;
-    background-color: white;
+    color: var(--black)
+    background-color: var(--white)
     transition: 0.4s;
 }
 
 .collapsible-header {
-    background-color: rgba(27, 27, 27, 0.9);
-    border: 0px transparent rgba(27, 27, 27, 0.9) !important;
+    background-color: var(--dark-grey);
+    border: 0px transparent var(--dark-grey) !important;
     outline: none !important;
 }
 

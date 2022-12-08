@@ -5,16 +5,20 @@
 }
 
 .form-wrapper {
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: var(--dark-grey);
 }
 
 .custom-input:focus {
-    border-bottom: 1px solid white !important;
-    box-shadow: 0 1px 0 0 white !important
+    border-bottom: 1px solid var(--white) !important;
+    box-shadow: 0 1px 0 0 var(--white) !important
 }
 
 .submitting-button {
-    background-color: rgb(27, 27, 27);
+    background-color: var(--dark-grey);
     font-size: calc(1vw + 1em);
     margin: 5%;
 }
+
+::placeholder { 
+    color: var(--white);
+ }

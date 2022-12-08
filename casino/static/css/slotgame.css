@@ -25,7 +25,7 @@
 .spin-button:hover {
     margin-top: 5%;
     background-color: #4CAF50 !important;
-    color: black;
+    color: var(--black)
     transition: 0.4s;
     border-bottom: 5px solid #2d722f;
 }

@@ -3,16 +3,16 @@
 }
 
 .main-schedule-table {
-    background-color: rgba(27, 27, 27, 0.9);
+    background-color: var(--dark-grey);
 }
 
 .table-element {
     padding: 0.25% !important;
-    background-color: rgba(183, 0, 0, 0.8);
+    background-color: var(--bloody);
 }
 
 .cell-container {
-    background-color: rgba(27, 27, 27, 1);
+    background-color: var(--dark-grey);
 }
 
 .cell-date {

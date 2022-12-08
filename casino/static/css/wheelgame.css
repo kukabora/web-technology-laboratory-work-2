@@ -12,7 +12,7 @@
 .spin-button:hover {
     margin-top: 5%;
     background-color: #4CAF50 !important;
-    color: black;
+    color: var(--black)
     transition: 0.4s;
     border-bottom: 5px solid #2d722f;
 }
@@ -24,7 +24,7 @@
 }
 
 #mainbox {
-    color: white;
+    color: var(--white)
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -55,8 +55,8 @@
 
 .box1>span {
     display: block;
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid var(--black)
+    background-color: var(--white)
     position: absolute;
     width: 50%;
     height: 50%;
@@ -64,7 +64,7 @@
 
 .box2>span {
     display: block;
-    border: 0px solid black;
+    border: 0px solid var(--black)
     background-color: red;
     position: absolute;
     width: 50%;
@@ -174,5 +174,5 @@
 }
 
 .box {
-    border: 5px solid black;
+    border: 5px solid var(--black)
 }
